@@ -1,4 +1,3 @@
-
 # Recolecta App
 
 
@@ -11,4 +10,10 @@ Aplicación móvil diseñada para abordar la problemática de la recolección de
    Por otro lado, los vecinos, conscientes del potencial de los materiales que poseen, utilizan una aplicación innovadora para conectar con estos recolectores. A través de esta plataforma tecnológica, marcan su ubicación en un mapa digital, indicando la disponibilidad y tipo de materiales que desean desechar. Plásticos acumulados en el garaje, botellas de vidrio acumuladas en la cocina, cartones y papeles acumulados en la oficina; todos estos materiales son ahora visibles para los ojos ávidos de los recolectores, que, a través de la aplicación, pueden solicitar la recolección y coordinar los detalles logísticos de la operación.
    La comunicación entre recolectores y vecinos es fluida y directa, facilitada por la aplicación que actúa como intermediario digital. Horarios, ubicaciones y detalles específicos son discutidos y confirmados, asegurando que la recolección se realice de manera eficiente y sin contratiempos. Y así, en un acto de cooperación y solidaridad, los materiales reciclables cambian de manos, encontrando un nuevo propósito y destino en el proceso.
    Este proceso, aparentemente simple, representa un hito en la lucha contra el desperdicio y la degradación ambiental en las ciudades. Al unir a los recolectores con los vecinos en una red de colaboración y aprovechamiento de recursos, se logra un impacto significativo en la reducción de residuos y la promoción de prácticas sostenibles. Y en el corazón de todo este proceso, reside la visión compartida de una comunidad que reconoce el valor en lo que otros descartan, y que trabaja unida hacia un futuro más verde y próspero para todos.
+
+## Forked from
+Originally Forked from: https://github.com/egitimplus/medium
+
+# medium
+https://medium.com/django-rest/django-rest-framework-b3028b3f0b9
 
