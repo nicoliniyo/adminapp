@@ -1,5 +1,6 @@
 {% load static %}
-
+{% load git_tags %}
+{% gitpython_sha as gitsha %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,11 +47,11 @@
   </nav>
   <!-- End Navbar -->
   <div class="page-header " style="background-image: url('{% static '/img/page-header-bg.jpg' %}')">
-    <div class="filter"></div>
+<!--    <div class="filter"></div>-->
     <div class="content-center">
       <div class="container">
         <div class="title-brand">
-          <h1 class="presentation-title">Nico AI</h1>
+          <h1 class="presentation-title">NicApps</h1>
 <!--          <div class="fog-low">-->
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
@@ -58,14 +59,14 @@
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
         </div>
-        <h2 class="presentation-subtitle text-center">Make your mark with a Free Bootstrap 4 UI Kit! </h2>
+        <h2 class="presentation-subtitle text-center">Just Apps! </h2>
       </div>
     </div>
     <div class="moving-clouds" style="background-image: url('{% static '/img/clouds.png' %}'); "></div>
-    <h6 class="category category-absolute">Designed and coded by
-      <a href="https://www.creative-tim.com" target="_blank">
-        <img src="{% static '/img/creative-tim-white-slim2.png' %}" class="creative-tim-logo">
-      </a>
+<!--    <h6 class="category category-absolute">Designed and coded by-->
+<!--      <a href="https://nicapps.online" target="_blank">NicApps-->
+<!--        <img src="{% static '/img/creative-tim-white-slim2.png' %}" class="creative-tim-logo">-->
+<!--      </a>-->
     </h6>
   </div>
   <div class="main">
@@ -77,7 +78,7 @@
           <nav class="footer-nav">
             <ul>
               <li>
-
+                <a href="#" >Ver: {{gitsha}}</a>
               </li>
               <li>
                 <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
@@ -89,7 +90,7 @@
               ©
               <script>
                 document.write(new Date().getFullYear())
-              </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </script>, made in <i class="fa fa-heart heart"></i> NicApps
             </span>
           </div>
         </div>

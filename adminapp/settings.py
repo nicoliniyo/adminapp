@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'reviews',
     'personas',
     'bootstrap',
-    'uiauth'
+    'uiauth',
+    'common',
 
 ]
 
