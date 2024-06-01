@@ -6,13 +6,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from bootstrap import views as bootstrapviews
 from uiauth import views as uiviews
-
+from django.conf.urls.i18n import i18n_patterns
 
 router = DefaultRouter()
 router.register(r'product', ProductViewSet, basename='Product')
 router.register(r'image', ImageViewSet, basename='Image')
 
-urlpatterns = [
+
+
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls')),
     path('api/', include(router.urls)),
@@ -21,7 +23,7 @@ urlpatterns = [
     path('signup/', uiviews.signup, name='signup'),
     path('signin/', uiviews.signin, name='signin'),
     path('signout/', uiviews.signout, name='signout'),
-]
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

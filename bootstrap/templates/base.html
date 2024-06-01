@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load git_tags %}
 {% gitpython_sha as gitsha %}
 <!DOCTYPE html>
@@ -60,7 +61,7 @@
                   <a href="#" >Ver: {{gitsha}}</a>
               </li>
               <li>
-                <a href="https://opensource.org/license/mit" target="_blank">Licenses</a>
+                <a href="https://opensource.org/license/mit" target="_blank">{% trans "licences" %}</a>
               </li>
             </ul>
           </nav>
