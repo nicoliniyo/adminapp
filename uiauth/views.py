@@ -38,7 +38,7 @@ def signup(request):
                 user.save()
                 login(request, user)
                 print('User created successfully, redirecting to Tasks')
-                return redirect('tasks')
+                return redirect('index')
             except Exception as e:
                 print(f"An error occurred: {e}")
                 return render(request, 'signup.html', {

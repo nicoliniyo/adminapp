@@ -4,3 +4,5 @@ from django.contrib import admin
 from actividades.models import Actividad
 
 admin.site.register(Actividad)
+
+admin.site.site_header = "Actividades Admin"
