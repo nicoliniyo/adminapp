@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated  # Optional permission class
+from rest_framework.permissions import \
+    IsAuthenticated  # Optional permission class
 
 from .models import Actividad
 from .serializers import ActividadSerializer, ShortActividadSerializer
@@ -18,6 +18,6 @@ class ActividadViewSet(viewsets.ModelViewSet):
         Override serializer based on action (optional for different representations)
         """
         if self.action == 'list':
-            return ShortActividadSerializer
+            return ActividadSerializer
         return super().get_serializer_class()
 
