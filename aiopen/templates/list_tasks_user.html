@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% load i18n %}
+
 {% block content %}
  <div class="section section-buttons">
         <div class="container">
             <div class="title">
-                <h2>Chat {% trans "Beta" %}</h2>
+                <h2>Chat "Beta"</h2>
             </div>
             <div class="title">
                 <h3>{{error}}</h3>
@@ -23,10 +23,10 @@
                 <table class="table table-hover ">
                   <thead>
                     <tr>
-                      <th scope="col">{% trans "Id" %}</th>
-                      <th scope="col">{% trans "Date" %}</th>
-                      <th scope="col">{% trans "Engine" %}</th>
-                      <th scope="col">{% trans "Value" %}</th>
+                      <th scope="col">"Id"</th>
+                      <th scope="col">"Date"</th>
+                      <th scope="col">"Engine"</th>
+                      <th scope="col">"Value"</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,9 +39,9 @@
                     </tr>
                     <tr>
                       <td colspan="2"></td>
-                      <td class="text-right">{% trans "Answers" %}:</td>
+                      <td class="text-right">"Answers":</td>
                       <td>
-                        {% for answer in task.answer_set.all %}
+                        {% for answer in task.answer_set.all
                           <p>{{ answer.answer_value|linebreaks }}</p>
                         {% endfor %}
                       </td>
@@ -49,8 +49,8 @@
                   {% empty %}
                         <div class="row">
                             <div class="col-md-8 ml-auto mr-auto text-left">
-                                <h2 class="title">{% trans "No answers yet" %}</h2>
-                                <p class="description">{% trans "Waiting for you to make a question" %}.</p>
+                                <h2 class="title">"No answers yet"</h2>
+                                <p class="description">"Waiting for you to make a question".</p>
                             </div>
 
                         </div>

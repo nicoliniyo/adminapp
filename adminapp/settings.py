@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from django.utils.translation import gettext_lazy as _
+#django.utils.translation.ugettext = gettext
 
 """
 Django settings for medium project.
@@ -147,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-bo'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
