@@ -198,7 +198,9 @@ CORS_ALLOWED_ORIGINS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'www.test2-cors.org',
+    'https://*.render.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
