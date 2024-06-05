@@ -8,7 +8,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NicolAI  {% if user.is_authenticated %} Authenticted {% else %} ! {% endif %}</title>
+    <title>NicApps</title>
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
     <!--    <link-->
     <!--      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"-->
@@ -35,7 +35,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Home of Nico AI" data-placement="bottom" >
-          Nico AI
+           {% if user.is_authenticated %} {{ user_info }} {% else %} NicApps {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -61,14 +61,19 @@
 <!--          </div>-->
         </div>
         <h2 class="presentation-subtitle text-center">{% trans "just apps!" %} </h2>
+
+        <div class="text-center ">
+          <br/>
+        <a class="btn btn-danger btn-round" href="{% url 'signup' %}">{% trans "Register" %}
+        </a>
+        <a class="btn btn-info btn-round" href="{% url 'signup' %}">{% trans "Signin " %}
+        </a>
       </div>
+      </div>
+
     </div>
     <div class="moving-clouds" style="background-image: url('{% static '/img/clouds.png' %}'); "></div>
-<!--    <h6 class="category category-absolute">Designed and coded by-->
-<!--      <a href="https://nicapps.online" target="_blank">NicApps-->
-<!--        <img src="{% static '/img/creative-tim-white-slim2.png' %}" class="creative-tim-logo">-->
-<!--      </a>-->
-    </h6>
+
   </div>
   <div class="main">
     {% block content %}
@@ -91,7 +96,7 @@
               ©
               <script>
                 document.write(new Date().getFullYear())
-              </script>, made in <i class="fa fa-heart heart"></i> NicApps
+              </script> NicApps
             </span>
           </div>
         </div>

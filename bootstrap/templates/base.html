@@ -35,7 +35,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom">
-          Nico AI
+          {% if user.is_authenticated %} {{ user_info }} {% else %} NicApps {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -70,7 +70,7 @@
               ©
               <script>
                 document.write(new Date().getFullYear())
-              </script>, made in <i class="fa fa-heart heart"></i> NicApps
+              </script> NicApps
             </span>
           </div>
         </div>
