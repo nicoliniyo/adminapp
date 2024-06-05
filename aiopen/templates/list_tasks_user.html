@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+ <div class="section section-buttons">
+        <div class="container">
+            <div class="title">
+                <h2>{% trans "Beta" %} - {{ user_info }}</h2>
+            </div>
+            <div class="title">
+                <h3>{{error}}</h3>
+            </div>
+
+
+            <div class="row">
+
+<!--                <div class="col-md-10 ml-auto mr-auto text-left" >-->
+<!--                    <h3 class="title">{{task.id}} - {{task.input_value|capfirst}}</h3>-->
+<!--                    {% for answer in task.answer_set.all %}-->
+<!--                        <p  lang="rtf" class="description">{{ answer.answer_value|linebreaks }}</p>-->
+<!--                    {% endfor %}-->
+
+<!--                </div>-->
+                <table class="table table-hover ">
+                  <thead>
+                    <tr>
+                      <th scope="col">{% trans "Id" %}</th>
+                      <th scope="col">{% trans "Date" %}</th>
+                      <th scope="col">{% trans "Engine" %}</th>
+                      <th scope="col">{% trans "Value" %}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for task in tasks %}
+                    <tr>
+                      <th scope="row">{{task.id}}</th>
+                      <td>{{task.created_at}}</td>
+                      <td>{{task.engine}}</td>
+                      <td>{{task.input_value|capfirst}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-right">{% trans "Answers" %}:</td>
+                      <td>
+                        {% for answer in task.answer_set.all %}
+                          <p>{{ answer.answer_value|linebreaks }}</p>
+                        {% endfor %}
+                      </td>
+                    </tr>
+                  {% empty %}
+                        <div class="row">
+                            <div class="col-md-8 ml-auto mr-auto text-left">
+                                <h2 class="title">{% trans "No answers yet" %}</h2>
+                                <p class="description">{% trans "Waiting for you to make a question" %}.</p>
+                            </div>
+
+                        </div>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+<!-- <div class="col-8">-->
+
+<!--    &lt;!&ndash; List Tasks &ndash;&gt;-->
+<!--    {% for task in tasks %}-->
+<!--    <div class="list-group">-->
+<!--        <div-->
+<!--                class="card card-body bg-secondary text-light d-flex flex-row justify-content-between mb-2"-->
+<!--        >-->
+<!--            <div>-->
+
+<!--                <h3 class="h6"><span class="badge rounded-pill bg-info">{{task.id}}</span></h3>-->
+<!--                <p>{{task.input_value}}</p>-->
+<!--                {% for answer in task.answer_set.all %}-->
+<!--                <p>{{ answer.answer_value }}</p>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--            <form action="{% url 'delete_task' task.id %}" method="POST">-->
+<!--                {% csrf_token %}-->
+<!--                <button class="btn btn-danger">Delete</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% empty %}-->
+<!--    <h1 class="text-light">No tasks yet</h1>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+{% endblock %}
+

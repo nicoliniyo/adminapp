@@ -25,6 +25,7 @@ urlpatterns = i18n_patterns(
     path('signup/', uiviews.signup, name='signup'),
     path('signin/', uiviews.signin, name='signin'),
     path('signout/', uiviews.signout, name='signout'),
+    path('aiopen/', include('aiopen.urls')),
 )
 
 if settings.DEBUG:

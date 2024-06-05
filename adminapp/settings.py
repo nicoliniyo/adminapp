@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'uiauth',
     'common',
     'actividades',
+    'aiopen',
 
 ]
 
