@@ -26,7 +26,7 @@
                                     placeholder="Escriba una pregunta..."
                                     autofocus />
                              <br/>
-                            <button class="btn btn-primary">"Send"</button>
+                            <button class="btn btn-primary">{% trans  "Send" %}</button>
                         </form>
 
                     </div>
@@ -43,7 +43,7 @@
                     <div class=" text-right">
                         <form action="{% url 'delete_task' task.id %}" method="POST">
                             {% csrf_token %}
-                            <button class="btn btn-danger btn-round">"Delete"</button>
+                            <button class="btn btn-danger btn-round">{% trans "Delete" %}</button>
                         </form>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
             {% empty %}
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto text-left">
-                        <h2 class="title"> "No answers yet"</h2>
-                        <p class="description"> "Waiting for you to make a question".</p>
+                        <h2 class="title">{% trans  "No answers yet" %}</h2>
+                        <p class="description">{% trans  "Waiting for you to make a question" %}.</p>
                     </div>
 
                 </div>
