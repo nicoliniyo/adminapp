@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section section-buttons">
+    <div class="container">
+        <div class="title">
+            <h2>Personas</h2>
+        </div>
+        <div>
+<!--            <h3>{{error}}</h3>-->
+            <a href="{% url 'persona_create' %}">Create new persona</a>
+        </div>
+
+        <div class="title">
+            <h3>Create/Edit Persona</h3>
+        </div>
+        <div class="row">
+
+
+            <div class="col-md-8 ml-auto mr-auto">
+                <form class="contact-form " method="post">
+                    <div class="row">
+                        {% csrf_token %}
+                        <div class="col-md-12">
+                               {{error}}
+                            </div>
+                        <div class="row">
+<!--                            <div class="col-md-6">-->
+<!--                                <label>Identificador</label>-->
+<!--                                <div class="input-group">-->
+<!--                                    <div class="input-group-prepend">-->
+<!--                                      <span class="input-group-text">-->
+<!--                                        <i class="nc-icon nc-single-02"></i>-->
+<!--                                      </span>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder="Identificador {{ form.id.label }}..."-->
+<!--                                           name=" {{ form.id.name }} "-->
+<!--                                           value="{{ form.id.value|default:'' }}"-->
+<!--                                           readonly-->
+<!--                                           id={{ form.id.id_for_label }}>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label>{{ form.fechanac.label }}</label>-->
+<!--                                <div class="input-group">-->
+<!--                                    <div class="input-group-prepend">-->
+<!--                                      <span class="input-group-text">-->
+<!--                                        <i class="nc-icon nc-badge"></i>-->
+<!--                                      </span>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.fechanac.label }}..."-->
+<!--                                           name=" {{ form.fechanac.name }} "-->
+<!--                                           value="{{ form.fechanac.value|default:'' }}"-->
+<!--                                           id={{ form.fechanac.id_for_label }}>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="col-md-6">
+                                <label>{{ form.fechanac.label }}</label>
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                      <div class="input-group date" id="datetimepicker">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">
+                                                <i class="nc-icon nc-calendar-60"></i>
+                                              </span>
+                                            </div>
+<!--                                        <input type="text" class="form-control datetimepicker" placeholder="27/03/2019" />-->
+<!--                                         <input type="text" class="form-control datetimepicker"-->
+<!--                                           placeholder=" {{ form.fechanac.label }}..."-->
+<!--                                           name=" {{ form.fechanac.name }} "-->
+<!--                                           value="{{ form.fechanac.value|default:'' }}"-->
+<!--                                           id={{ form.fechanac.id_for_label }}>-->
+                                          <div class="form-control datetimepicker">{{ form.fechanac }}</div>
+<!--                                          {{ form.fechanac }}-->
+                                        <div class="input-group-append">
+
+                                          <span class="input-group-text">
+                                            <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                            <div class="col-md-6">
+                                <label>{{ form.extension.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.extension.label }}..."-->
+<!--                                           name=" {{ form.extension.name }} "-->
+<!--                                           value="{{ form.extension.value|default:'' }}"-->
+<!--                                           id={{ form.extension.id_for_label }}>-->
+<!--                                    <div class="form-control">{{ form.extension }}</div>-->
+                                    {{ form.extension }}
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label>{{ form.genero.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.genero.label }}..."-->
+<!--                                           name=" {{ form.genero.name }} "-->
+<!--                                           value="{{ form.genero.value|default:'' }}"-->
+<!--                                           id={{ form.genero.id_for_label }}>-->
+                                    {{ form.genero }}
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <label>{{ form.nombres.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.nombres.label }}..."-->
+<!--                                           name=" {{ form.nombres.name }} "-->
+<!--                                           value="{{ form.nombres.value|default:'' }}"-->
+<!--                                           id={{ form.nombres.id_for_label }}>-->
+                                    {{ form.nombres }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label>{{ form.paterno.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.paterno.label }}..."-->
+<!--                                           name=" {{ form.paterno.name }} "-->
+<!--                                           value="{{ form.paterno.value|default:'' }}"-->
+<!--                                           id={{ form.paterno.id_for_label }}>-->
+                                    <div>{{ form.paterno }}</div>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <label>{{ form.materno.label }}</label>
+                                <div class="input-group">
+<!--                                    <div class="input-group-prepend">-->
+<!--                                      <span class="input-group-text">-->
+<!--                                        <i class="nc-icon nc-badge"></i>-->
+<!--                                      </span>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.materno.label }}..."-->
+<!--                                           name=" {{ form.materno.name }} "-->
+<!--                                           value="{{ form.materno.value|default:'' }}"-->
+<!--                                           id={{ form.materno.id_for_label }}>-->
+                                    {{ form.materno }}
+                                </div>
+                            </div>
+
+                             <div class="col-md-3">
+                                <label>Apellido de {{ form.casada.label }}</label>
+                                <div class="input-group">
+<!--                                    <div class="input-group-prepend">-->
+<!--                                      <span class="input-group-text">-->
+<!--                                        <i class="nc-icon nc-single-02"></i>-->
+<!--                                      </span>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder="Apelido de {{ form.casada.label }}..."-->
+<!--                                           name="Apellido de {{ form.casada.name }} "-->
+<!--                                           value="{{ form.casada.value|default:'' }}"-->
+<!--                                           id="{{ form.casada.id_for_label }}">-->
+                                    {{ form.casada }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>{{ form.nomcompleto.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.nomcompleto.label }}..."-->
+<!--                                           name=" {{ form.nomcompleto.name }} "-->
+<!--                                           value="{{ form.nomcompleto.value|default:'' }}"-->
+<!--                                           id={{ form.nomcompleto.id_for_label }}>-->
+                                    {{ form.nomcompleto }}
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label>{{ form.nrodocumento.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.nrodocumento.label }}..."-->
+<!--                                           name=" {{ form.nrodocumento.name }} "-->
+<!--                                           value="{{ form.nrodocumento.value|default:'' }}"-->
+<!--                                           id={{ form.nrodocumento.id_for_label }}>-->
+                                    {{ form.nrodocumento }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{ form.nrodocumentochars.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.nrodocumentochars.label }}..."-->
+<!--                                           name=" {{ form.nrodocumentochars.name }} "-->
+<!--                                           value="{{ form.nrodocumentochars.value|default:'' }}"-->
+<!--                                           id={{ form.nrodocumentochars.id_for_label }}>-->
+                                    {{ form.nrodocumentochars }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{ form.nrodocumentoint.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.nrodocumentoint.label }}..."-->
+<!--                                           name=" {{ form.nrodocumentoint.name }} "-->
+<!--                                           value="{{ form.nrodocumentoint.value|default:'' }}"-->
+<!--                                           id={{ form.nrodocumentoint.id_for_label }}>-->
+                                    {{ form.nrodocumentoint }}
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label>{{ form.tipodocumento.label }}</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="nc-icon nc-badge"></i>
+                                      </span>
+                                    </div>
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder=" {{ form.tipodocumento.label }}..."-->
+<!--                                           name=" {{ form.tipodocumento.name }} "-->
+<!--                                           value="{{ form.tipodocumento.value|default:'' }}"-->
+<!--                                           id={{ form.tipodocumento.id_for_label }}>-->
+                                    {{ form.tipodocumento }}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                        <div class="col-md-6">
+<!--                                <label>{{ form.tipodocumento.label }}</label>-->
+
+                                <button class="btn btn-primary" type="submit">Save</button>
+                            </div>
+                        </div>
+
+<!--                        <label>Message</label>-->
+<!--                        <textarea class="form-control" rows="4"-->
+<!--                                  placeholder="Tell us your thoughts and feelings..."></textarea>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-4 ml-auto mr-auto">-->
+<!--                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

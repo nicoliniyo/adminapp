@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+ <div class="section section-buttons">
+        <div class="container">
+            <div class="title">
+                <h2>Chat {% trans "Beta" %} </h2>
+            </div>
+            <div class="title">
+                <h3>{{error}}</h3>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="input-group">
+
+                        <form action="{% url 'create_task' %}"  method="POST"
+                            class="card card-body mb-2"
+                        >
+                            {% csrf_token %}
+<!--                            <label for="input_value">Realice una pregunta:</label>-->
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    name="input_value"
+                                    placeholder="Escriba una pregunta..."
+                                    autofocus />
+                             <br/>
+                            <button class="btn btn-primary">{% trans "Send" %}</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+             {% for task in tasks %}
+            <div class="row">
+
+                <div class="col-md-10 ml-auto mr-auto text-left" >
+                    <h3 class="title">{{task.id}} - {{task.input_value|capfirst}}</h3>
+                    {% for answer in task.answer_set.all %}
+                        <p  lang="rtf" class="description">{{ answer.answer_value|linebreaks }}</p>
+                    {% endfor %}
+                    <div class=" text-right">
+                        <form action="{% url 'delete_task' task.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="btn btn-danger btn-round">{% trans "Delete" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-left">
+                        <h2 class="title">{% trans  "No answers yet" %}</h2>
+                        <p class="description">{% trans  "Waiting for you to make a question" %}.</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+<!-- <div class="col-8">-->
+
+<!--    &lt;!&ndash; List Tasks &ndash;&gt;-->
+<!--    {% for task in tasks %}-->
+<!--    <div class="list-group">-->
+<!--        <div-->
+<!--                class="card card-body bg-secondary text-light d-flex flex-row justify-content-between mb-2"-->
+<!--        >-->
+<!--            <div>-->
+
+<!--                <h3 class="h6"><span class="badge rounded-pill bg-info">{{task.id}}</span></h3>-->
+<!--                <p>{{task.input_value}}</p>-->
+<!--                {% for answer in task.answer_set.all %}-->
+<!--                <p>{{ answer.answer_value }}</p>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--            <form action="{% url 'delete_task' task.id %}" method="POST">-->
+<!--                {% csrf_token %}-->
+<!--                <button class="btn btn-danger">Delete</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% empty %}-->
+<!--    <h1 class="text-light">"No answers yet" </h1>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+{% endblock %}
+

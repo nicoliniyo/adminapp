@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--<div class="section section-dark">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-8 ml-auto mr-auto text-center">-->
+<!--                <h2 class="title">Registro de Usuario</h2>-->
+<!--&lt;!&ndash;                <p class="description">The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful kit.</p>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="section section-image section-login" style="background-image: url('{% static '/img/login-image.jpg' %}');">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mx-auto">
+<!--                <h2 class="title">Ingreso</h2>-->
+                <form class="register-form" action="/es/signin/" method="POST">
+                    <div class="card card-register">
+                        <h2 class="title mx-auto">Ingreso</h2>
+                        <div class="social-line text-center">
+                            <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon mt-0">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon mt-0">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon mt-0">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+
+                            {% csrf_token %}
+                            <label>{{error}}</label>
+                            <label>Email</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+
+                                  <i class="nc-icon nc-email-85"></i>
+
+                                </span>
+                                </div>
+                                {{ form.username }}
+<!--                                <input type="email" class="form-control" placeholder="Email">-->
+                            </div>
+                            <label>Password</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="nc-icon nc-key-25"></i>
+                            </span>
+                                </div>
+                                {{ form.password }}
+<!--                                <input type="password" class="form-control" placeholder="Password">-->
+                            </div>
+                            <button class="btn btn-danger btn-block btn-round">Signin</button>
+
+                        <div class="forgot">
+                            <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                        </div>
+                    </div>
+<!--                    <div class="col text-center">-->
+<!--                        <a href="./examples/register-page.html" class="btn btn-outline-neutral btn-round btn-lg" target="_blank">View Register Page</a>-->
+<!--                        -->
+<!--                    </div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
