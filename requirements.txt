@@ -37,6 +37,7 @@ psycopg2==2.9.9
 psycopg2-binary==2.9.9
 PyJWT==1.7.1
 python-dotenv==1.0.1
+python-gettext==5.0
 python-magic==0.4.18
 pytz==2020.1
 requests==2.32.3
