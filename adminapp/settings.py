@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from django.utils.translation import gettext_lazy as _
+#django.utils.translation.ugettext = gettext
 
 """
 Django settings for medium project.
@@ -147,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-bo'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -197,7 +198,9 @@ CORS_ALLOWED_ORIGINS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'www.test2-cors.org',
+    'https://*.render.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
