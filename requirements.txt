@@ -29,6 +29,8 @@ mixed-methods==1.1.1
 named==1.4.2
 orderings==1.4.0
 Pillow==8.0.0
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
 PyJWT==1.7.1
 python-dotenv==1.0.1
 python-magic==0.4.18
