@@ -41,7 +41,7 @@
                       <td colspan="2"></td>
                       <td class="text-right">{% trans "Answers" %}</td>
                       <td>
-                        {% for answer in task.answer_set.all
+                        {% for answer in task.answer_set.all %}
                           <p>{{ answer.answer_value|linebreaks }}</p>
                         {% endfor %}
                       </td>
