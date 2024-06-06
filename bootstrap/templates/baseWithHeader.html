@@ -62,19 +62,19 @@
         </div>
         <h2 class="presentation-subtitle text-center">{% trans "just apps!" %} </h2>
 
-        <div class="text-center ">
-          <br/>
-        <a class="btn btn-danger btn-round" href="{% url 'signup' %}">{% trans "Register" %}
-        </a>
-        <a class="btn btn-info btn-round" href="{% url 'signup' %}">{% trans "Signin " %}
-        </a>
-      </div>
       </div>
 
     </div>
     <div class="moving-clouds" style="background-image: url('{% static '/img/clouds.png' %}'); "></div>
 
   </div>
+  <div class="text-center ">
+          <br/>
+        <a class="btn btn-danger btn-round" href="{% url 'signup' %}">{% trans "Register" %}
+        </a>
+        <a class="btn btn-info btn-round" href="{% url 'signin' %}">{% trans "Signin " %}
+        </a>
+      </div>
   <div class="main">
     {% block content %}
     {% endblock %}
