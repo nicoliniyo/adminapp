@@ -35,7 +35,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Home of Nico AI" data-placement="bottom" >
-           {% if user.is_authenticated %} {{ user_info }} {% else %} NicApps {% endif %}
+           {% if user.is_authenticated %} {{ user_info }} {% else %} {% trans "branding_titulo_sup_izq" %} {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -52,7 +52,7 @@
     <div class="content-center">
       <div class="container">
         <div class="title-brand">
-          <h1 class="presentation-title">NicApps</h1>
+          <h1 class="presentation-title">Recolecta App</h1>
 <!--          <div class="fog-low">-->
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
@@ -60,7 +60,7 @@
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
         </div>
-        <h2 class="presentation-subtitle text-center">{% trans "just apps!" %} </h2>
+        <h2 class="presentation-subtitle text-center">{% trans "App y Web" %} </h2>
 
       </div>
 
