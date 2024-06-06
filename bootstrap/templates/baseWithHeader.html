@@ -1,12 +1,14 @@
 {% load static %}
-
+{% load i18n %}
+{% load git_tags %}
+{% gitpython_sha as gitsha %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NicolAI  {% if user.is_authenticated %} Authenticted {% else %} ! {% endif %}</title>
+    <title>NicApps</title>
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
     <!--    <link-->
     <!--      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"-->
@@ -33,7 +35,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Home of Nico AI" data-placement="bottom" >
-          Nico AI
+           {% if user.is_authenticated %} {{ user_info }} {% else %} NicApps {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -46,11 +48,11 @@
   </nav>
   <!-- End Navbar -->
   <div class="page-header " style="background-image: url('{% static '/img/page-header-bg.jpg' %}')">
-    <div class="filter"></div>
+<!--    <div class="filter"></div>-->
     <div class="content-center">
       <div class="container">
         <div class="title-brand">
-          <h1 class="presentation-title">Nico AI</h1>
+          <h1 class="presentation-title">NicApps</h1>
 <!--          <div class="fog-low">-->
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
@@ -58,16 +60,21 @@
 <!--            <img src="{% static '/img/fog-low.png' %}" alt="">-->
 <!--          </div>-->
         </div>
-        <h2 class="presentation-subtitle text-center">Make your mark with a Free Bootstrap 4 UI Kit! </h2>
+        <h2 class="presentation-subtitle text-center">{% trans "just apps!" %} </h2>
+
       </div>
+
     </div>
     <div class="moving-clouds" style="background-image: url('{% static '/img/clouds.png' %}'); "></div>
-    <h6 class="category category-absolute">Designed and coded by
-      <a href="https://www.creative-tim.com" target="_blank">
-        <img src="{% static '/img/creative-tim-white-slim2.png' %}" class="creative-tim-logo">
-      </a>
-    </h6>
+
   </div>
+  <div class="text-center ">
+          <br/>
+        <a class="btn btn-danger btn-round" href="{% url 'signup' %}">{% trans "Register" %}
+        </a>
+        <a class="btn btn-info btn-round" href="{% url 'signin' %}">{% trans "Signin " %}
+        </a>
+      </div>
   <div class="main">
     {% block content %}
     {% endblock %}
@@ -77,10 +84,10 @@
           <nav class="footer-nav">
             <ul>
               <li>
-
+                <a href="#" >Ver: {{gitsha}}</a>
               </li>
               <li>
-                <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
+                <a href="https://opensource.org/license/mit" target="_blank">{% trans "licences" %}</a>
               </li>
             </ul>
           </nav>
@@ -89,7 +96,7 @@
               ©
               <script>
                 document.write(new Date().getFullYear())
-              </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </script> NicApps
             </span>
           </div>
         </div>

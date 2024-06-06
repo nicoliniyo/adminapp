@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-05 21:01-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: adminapp/settings.py:37
+msgid "English"
+msgstr "English"
+
+#: adminapp/settings.py:38
+msgid "Español"
+msgstr "Spanish"
+
+#: aiopen/templates/list_tasks.html:7 aiopen/templates/list_tasks_user.html:7
+msgid "Beta"
+msgstr "Beta"
+
+#: aiopen/templates/list_tasks.html:29
+msgid "Send"
+msgstr "Send"
+
+#: aiopen/templates/list_tasks.html:46
+msgid "Delete"
+msgstr "Delete"
+
+#: aiopen/templates/list_tasks.html:54 aiopen/templates/list_tasks_user.html:52
+msgid "No answers yet"
+msgstr "No answers yet"
+
+#: aiopen/templates/list_tasks.html:55 aiopen/templates/list_tasks_user.html:53
+msgid "Waiting for you to make a question"
+msgstr "Waiting for you to make a question"
+
+#: aiopen/templates/list_tasks_user.html:26
+msgid "Id"
+msgstr "Id"
+
+#: aiopen/templates/list_tasks_user.html:27
+msgid "Date"
+msgstr "Date"
+
+#: aiopen/templates/list_tasks_user.html:28
+msgid "Engine"
+msgstr "Engine"
+
+#: aiopen/templates/list_tasks_user.html:29
+msgid "Value"
+msgstr "Value"
+
+#: aiopen/templates/list_tasks_user.html:42
+msgid "Answers"
+msgstr "Answers"
+
+#: bootstrap/templates/base.html:64 bootstrap/templates/baseWithHeader.html:90
+msgid "licences"
+msgstr "Licences"
+
+#: bootstrap/templates/baseWithHeader.html:63
+msgid "just apps!"
+msgstr "Just Apps!"
+
+#: bootstrap/templates/baseWithHeader.html:67
+msgid "Register"
+msgstr "Register"
+
+#: bootstrap/templates/baseWithHeader.html:69
+#, fuzzy
+#| msgid "signin"
+msgid "Signin "
+msgstr "Signin"
+
+#: bootstrap/templates/index.html:7
+msgid "creating apps for the future title"
+msgstr "Creating Apps for the Future"
+
+#: bootstrap/templates/index.html:10
+msgid "creating app for the future text"
+msgstr ""
+"We are dedicated to creating open-source applications that are accessible "
+"and beneficial to everyone. Our open-source applications are transparent, "
+"community-driven, and free to use, modify, and distribute. We believe in the "
+"power of open-source software to promote collaboration, innovation, and the "
+"creation of tools that meet the needs of diverse users. Our applications are "
+"designed for general use and can be used by individuals and organizations "
+"seeking practical solutions for everyday tasks. Join us in embracing the "
+"open-source philosophy and discover the endless possibilities of "
+"collaborative software development."
+
+#: bootstrap/templates/nav.html:16
+msgid "home"
+msgstr "Home"
+
+#: bootstrap/templates/nav.html:23
+msgid "Chat AI"
+msgstr "Chat AI"
+
+#: bootstrap/templates/nav.html:29
+msgid "My Chats"
+msgstr "My Chats"
+
+#: bootstrap/templates/nav.html:36
+msgid "people"
+msgstr "People"
+
+#: bootstrap/templates/nav.html:43
+msgid "signout"
+msgstr "Signout"
+
+#: bootstrap/templates/nav.html:52
+msgid "signup"
+msgstr "Signup"
+
+#: bootstrap/templates/nav.html:58
+msgid "signin"
+msgstr "Signin"
+
+#~ msgid "tasks"
+#~ msgstr "Tasks"
+
+#~ msgid "my tasks"
+#~ msgstr "My Tasks"

@@ -1,5 +1,7 @@
 {% load static %}
-
+{% load i18n %}
+{% load git_tags %}
+{% gitpython_sha as gitsha %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom">
-          Nico AI
+          {% if user.is_authenticated %} {{ user_info }} {% else %} NicApps {% endif %}
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -56,13 +58,10 @@
             <ul>
               <li>
 
-                  <a href="#" >Ver: </a>
+                  <a href="#" >Ver: {{gitsha}}</a>
               </li>
               <li>
-                <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
+                <a href="https://opensource.org/license/mit" target="_blank">{% trans "licences" %}</a>
               </li>
             </ul>
           </nav>
@@ -71,7 +70,7 @@
               ©
               <script>
                 document.write(new Date().getFullYear())
-              </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </script> NicApps
             </span>
           </div>
         </div>
