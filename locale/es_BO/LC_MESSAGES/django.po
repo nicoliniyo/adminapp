@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 09:35-0400\n"
+"POT-Creation-Date: 2024-06-05 21:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: adminapp/settings.py:33
+#: adminapp/settings.py:37
 msgid "English"
 msgstr "Ingles"
 
-#: adminapp/settings.py:34
+#: adminapp/settings.py:38
 msgid "Español"
 msgstr "Español"
 
@@ -37,8 +37,7 @@ msgstr "Enviar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: aiopen/templates/list_tasks.html:54 aiopen/templates/list_tasks.html:86
-#: aiopen/templates/list_tasks_user.html:52
+#: aiopen/templates/list_tasks.html:54 aiopen/templates/list_tasks_user.html:52
 msgid "No answers yet"
 msgstr "No hay respuestas todavia"
 
@@ -66,13 +65,23 @@ msgstr "Valor"
 msgid "Answers"
 msgstr "Respuestas"
 
-#: bootstrap/templates/base.html:64 bootstrap/templates/baseWithHeader.html:85
+#: bootstrap/templates/base.html:64 bootstrap/templates/baseWithHeader.html:90
 msgid "licences"
 msgstr "Licencias"
 
 #: bootstrap/templates/baseWithHeader.html:63
 msgid "just apps!"
 msgstr "Simplemente Apps!"
+
+#: bootstrap/templates/baseWithHeader.html:67
+msgid "Register"
+msgstr "Registrarse"
+
+#: bootstrap/templates/baseWithHeader.html:69
+#, fuzzy
+#| msgid "signin"
+msgid "Signin "
+msgstr "Ingresar"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
