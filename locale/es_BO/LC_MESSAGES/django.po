@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 21:01-0400\n"
+"POT-Creation-Date: 2024-06-06 12:00-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,41 +69,31 @@ msgstr "Respuestas"
 msgid "licences"
 msgstr "Licencias"
 
-#: bootstrap/templates/baseWithHeader.html:63
-msgid "just apps!"
-msgstr "Simplemente Apps!"
+#: bootstrap/templates/baseWithHeader.html:38
+msgid "branding_titulo_sup_izq"
+msgstr "RecolectaApp"
 
-#: bootstrap/templates/baseWithHeader.html:67
+#: bootstrap/templates/baseWithHeader.html:63
+msgid "App y Web"
+msgstr "Aplicación Android y Sitio Web"
+
+#: bootstrap/templates/baseWithHeader.html:73
 msgid "Register"
 msgstr "Registrarse"
 
-#: bootstrap/templates/baseWithHeader.html:69
+#: bootstrap/templates/baseWithHeader.html:75
 #, fuzzy
 #| msgid "signin"
 msgid "Signin "
 msgstr "Ingresar"
 
 #: bootstrap/templates/index.html:7
-msgid "creating apps for the future title"
-msgstr "Creando Apps para el futuro"
+msgid "what_is_title"
+msgstr "¿Que es Recolecta App?"
 
 #: bootstrap/templates/index.html:10
-msgid "creating app for the future text"
-msgstr ""
-"Nos apasiona crear aplicaciones de código abierto que sean accesibles y "
-"beneficiosas para todos. Nuestro compromiso con el desarrollo de código "
-"abierto garantiza que nuestras aplicaciones sean transparentes, impulsadas "
-"por la comunidad y estén disponibles gratuitamente para que cualquiera pueda "
-"usarlas, modificarlas y distribuirlas. Creemos que el software de código "
-"abierto promueve la colaboración, la innovación y la creación de "
-"herramientas que realmente abordan las necesidades de diversos usuarios. "
-"Nuestras aplicaciones de código abierto están diseñadas para uso general, "
-"atendiendo a una amplia gama de individuos y organizaciones que buscan "
-"soluciones prácticas para las tareas diarias. Ya sea que sea un estudiante, "
-"un profesional o simplemente busque herramientas útiles para mejorar su "
-"productividad, nuestras aplicaciones de código abierto están aquí para "
-"empoderarlo. Únase a nosotros para adoptar la filosofía de código abierto y "
-"descubra las infinitas posibilidades del desarrollo de software colaborativo."
+msgid "what_is_text"
+msgstr "Es una aplicación móvil quer incluye un sitio web de administración diseñados para abordar la problemática de la recolección de materiales en las zonas urbanas. Esta aplicación conectará de manera eficiente a los recolectores de materiales reciclables con los vecinos que desean deshacerse de esos materiales, promoviendo así la reutilización y el reciclaje en la ciudad."
 
 #: bootstrap/templates/nav.html:16
 msgid "home"
@@ -132,6 +122,57 @@ msgstr "Registrarse"
 #: bootstrap/templates/nav.html:58
 msgid "signin"
 msgstr "Ingresar"
+
+#, fuzzy
+#~| msgid "que es recolecta app text"
+#~ msgid "what is recolecta app"
+#~ msgstr ""
+#~ "Es una aplicación móvil quer incluye un sitio web de administración "
+#~ "diseñados para abordar la problemática de la recolección de materiales en "
+#~ "las zonas urbanas. Esta aplicación conectará de manera eficiente a los "
+#~ "recolectores de materiales reciclables con los vecinos que desean "
+#~ "deshacerse de esos materiales, promoviendo así la reutilización y el "
+#~ "reciclaje en la ciudad."
+
+#, fuzzy
+#~| msgid "que es recolecta app text"
+#~ msgid "what is recolecta app text"
+#~ msgstr ""
+#~ "Es una aplicación móvil quer incluye un sitio web de administración "
+#~ "diseñados para abordar la problemática de la recolección de materiales en "
+#~ "las zonas urbanas. Esta aplicación conectará de manera eficiente a los "
+#~ "recolectores de materiales reciclables con los vecinos que desean "
+#~ "deshacerse de esos materiales, promoviendo así la reutilización y el "
+#~ "reciclaje en la ciudad."
+
+#, fuzzy
+#~| msgid "branding_titulo_sup_izq"
+#~ msgid "center_branding_title"
+#~ msgstr "RecolectaApp"
+
+#~ msgid "creating apps for the future title"
+#~ msgstr "Creando Apps para el futuro"
+
+#~ msgid "creating app for the future text"
+#~ msgstr ""
+#~ "Nos apasiona crear aplicaciones de código abierto que sean accesibles y "
+#~ "beneficiosas para todos. Nuestro compromiso con el desarrollo de código "
+#~ "abierto garantiza que nuestras aplicaciones sean transparentes, "
+#~ "impulsadas por la comunidad y estén disponibles gratuitamente para que "
+#~ "cualquiera pueda usarlas, modificarlas y distribuirlas. Creemos que el "
+#~ "software de código abierto promueve la colaboración, la innovación y la "
+#~ "creación de herramientas que realmente abordan las necesidades de "
+#~ "diversos usuarios. Nuestras aplicaciones de código abierto están "
+#~ "diseñadas para uso general, atendiendo a una amplia gama de individuos y "
+#~ "organizaciones que buscan soluciones prácticas para las tareas diarias. "
+#~ "Ya sea que sea un estudiante, un profesional o simplemente busque "
+#~ "herramientas útiles para mejorar su productividad, nuestras aplicaciones "
+#~ "de código abierto están aquí para empoderarlo. Únase a nosotros para "
+#~ "adoptar la filosofía de código abierto y descubra las infinitas "
+#~ "posibilidades del desarrollo de software colaborativo."
+
+#~ msgid "just apps!"
+#~ msgstr "Simplemente Apps!"
 
 #~ msgid "tasks"
 #~ msgstr "Tareas"
