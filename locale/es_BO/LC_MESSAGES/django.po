@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 21:01-0400\n"
+"POT-Creation-Date: 2024-06-06 10:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,11 +73,11 @@ msgstr "Licencias"
 msgid "just apps!"
 msgstr "Simplemente Apps!"
 
-#: bootstrap/templates/baseWithHeader.html:67
+#: bootstrap/templates/baseWithHeader.html:73
 msgid "Register"
 msgstr "Registrarse"
 
-#: bootstrap/templates/baseWithHeader.html:69
+#: bootstrap/templates/baseWithHeader.html:75
 #, fuzzy
 #| msgid "signin"
 msgid "Signin "
