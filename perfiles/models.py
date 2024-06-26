@@ -6,7 +6,8 @@ from django.db import models
 from django.utils import timezone  # Use timezone for timestamps
 
 class Perfil(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)  # Link to User model
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to User model
     email = models.EmailField(max_length=255, unique=True)  # Ensure unique email
 
     # Separate first and last names for better data handling
@@ -25,11 +26,11 @@ class Perfil(models.Model):
     USER_TYPE_CHOICES = (
         # ('standard', 'Standard User'),
         # ('admin', 'Admin'),
-        ('ACTIVIDAD_TIPO_USUARIO_VECINO', 'VECINO'),
-        ('ACTIVIDAD_TIPO_USUARIO_RECOLECTOR', 'RECOLECTOR'),
-        ('ACTIVIDAD_TIPO_USUARIO_ADMIN', 'ADMIN'),
+        ('VECINO', 'Vecino'),
+        ('RECOLECTOR', 'Recolector'),
+        ('ADMIN', 'Admin'),
     )
-    user_type = models.CharField(max_length=100, choices=USER_TYPE_CHOICES, default='standard')
+    user_type = models.CharField(max_length=100, choices=USER_TYPE_CHOICES, default='VECINO')
 
     # Use BooleanField for is_admin and is_active
     is_admin = models.BooleanField(default=False)
