@@ -6,7 +6,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         # Your custom logic to retrieve or create a user object
         # based on data in validated_data (e.g., email)
-        user = User.objects.get(email=validated_data['email'])  # Example
+        user = User.objects.get(username=validated_data['phone_personal'])  # Example
         validated_data['user'] = user
         return UsersProfile.objects.create(**validated_data)
 
