@@ -73,7 +73,7 @@ INSTALLED_APPS = [
     'common',
     'actividades',
     'aiopen',
-    'perfiles',
+    'users_profiles',
 
 ]
 
