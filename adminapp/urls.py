@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from actividades.views import ActividadViewSet
 from reviews.views import ProductViewSet, ImageViewSet
+from users_profiles.views import UserProfileViewSet
 from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,6 +14,7 @@ router = DefaultRouter()
 router.register(r'product', ProductViewSet, basename='Product')
 router.register(r'image', ImageViewSet, basename='Image')
 router.register(r'actividad', ActividadViewSet, basename='Actividad')
+router.register(r'userprofile', UserProfileViewSet, basename='UserProfile')
 
 
 
