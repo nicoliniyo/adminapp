@@ -202,7 +202,8 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.test-cors.org",
-    'http://10.0.2.2:8000'
+    'http://10.0.2.2:8000',
+    'https://*.render.com',
 ]
 
 
