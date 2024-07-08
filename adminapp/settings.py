@@ -43,7 +43,12 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, '/locale')
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '10.0.2.2',
+    '127.0.0.1',
+    'localhost',
+    '*.supabase.com',
+]
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -69,6 +74,7 @@ INSTALLED_APPS = [
     'common',
     'actividades',
     'aiopen',
+    'users_profiles',
 
 ]
 
@@ -197,13 +203,16 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.test-cors.org",
+    'http://10.0.2.2:8000',
+    'https://*.render.com',
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.render.com',
     'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'http://127.0.0.1:8000',
+    'http://10.0.2.2:8000'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
