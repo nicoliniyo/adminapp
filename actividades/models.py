@@ -32,4 +32,4 @@ class Actividad(models.Model):
         ordering = ['-created_at']  # Default ordering by creation time (descending)
 
     def __str__(self):
-        return f"Actividad #{self.id} - {self.activity_type}"  # User-friendly string representation
+        return f"Id: {self.id} - {self.activity_type} - UserId: {self.created_by_user}"  # User-friendly string representation
