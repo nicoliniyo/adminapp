@@ -3,15 +3,35 @@ from .models import Actividad  # Assuming your Actividad model is in the same ap
 from django.contrib.auth.models import User
 
 class ActividadSerializer(serializers.ModelSerializer):
-    # created_by_user = serializers.SlugRelatedField(slug_field='id', queryset=User.objects.all())  # Use username for user identification
-    # operated_by_user = serializers.SlugRelatedField(slug_field='id', read_only=True, allow_null=True)  # Allow null for operated_by
+    # def validate_created_by_user_id(self, value):
+    #     try:
+    #         User.objects.get(pk=value)
+    #         return value
+    #     except User.DoesNotExist:
+    #         raise serializers.ValidationError("Invalid created_by_user_id")
 
     def create(self, validated_data):
-        # Your custom logic to retrieve or create a user object
-        # based on data in validated_data (e.g., email)
-        user = User.objects.get(id=validated_data['created_by_user_id'])  # Example
-        validated_data['created_by_user_id'] = user
-        return Actividad.objects.create(**validated_data)
+        user_id = validated_data.get('created_by_user_id')
+
+        if user_id:
+            try:
+                user = User.objects.get(id=user_id)
+            except User.DoesNotExist:
+                raise serializers.ValidationError("Invalid created_by_user_id")
+        else:
+            # Handle the case where created_by_user_id is missing
+            # For example, set a default user or raise an error
+            user = None  # Or set a default user
+            #raise serializers.ValidationError("created_by_user_id is required")  # Uncomment if required
+
+        # Create the Actividad instance with the user or without
+        actividad = Actividad.objects.create(**validated_data)
+        if user:
+            actividad.created_by_user = user
+            actividad.save()
+        return actividad
+
+
 
     class Meta:
         model = Actividad
