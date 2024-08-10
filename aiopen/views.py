@@ -7,19 +7,19 @@ from django.shortcuts import render, redirect
 from .ai_api import send_request
 
 
-
 # Create your views here.
 @login_required
 def list_tasks(request):
-    #tasks = Task.objects.all()
+    # tasks = Task.objects.all()
     tasks = Task.objects.prefetch_related('answer_set')
     user_info = request.user
     # print(user_info)
     # print(tasks)
     return render(request, "list_tasks.html", {
         "tasks": tasks,
-        "user_info" : user_info,
+        "user_info": user_info,
     })
+
 
 @login_required
 def list_task_user(request):
@@ -28,12 +28,15 @@ def list_task_user(request):
     # print(user_info)
     return render(request, "list_tasks_user.html", {
         "tasks": tasks,
-        "user_info" : user_info,
+        "user_info": user_info,
     })
+
 
 @login_required
 def create_task(request):
     new_input = request.POST["input_value"]
+    print('INPUT')
+    print(new_input)
     user = request.user
     # new_description = request.POST["description"]
     if new_input == "":
@@ -70,6 +73,7 @@ def create_task(request):
             "list_tasks.html",
             {"tasks": tasks, "error": f"Error: {str(e)}"},
         )
+
 
 @login_required
 def delete_task(request, task_id):

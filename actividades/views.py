@@ -9,7 +9,10 @@ from .serializers import ActividadSerializer, ShortActividadSerializer
 
 class ActividadViewSet(viewsets.ModelViewSet):
     queryset = Actividad.objects.all()
-    permission_classes = [IsAuthenticated]  # Optional permission class for authentication
+    filterset_fields = ('created_by_user', 'operated_by_user', 'status')
+    ordering = ['status']  # Default ordering
+    ordering_fields = ['id',  'status']
+    # permission_classes = [IsAuthenticated]  # Optional permission class for authentication
     serializer_class = ActividadSerializer  # Default serializer for most actions
 
     # def get_serializer_class(self):
