@@ -31,7 +31,7 @@ class UsersProfile(models.Model):
     local_user_id = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        return f"{self.names} {self.last_name1} ({self.email})"
+        return f"Id: {self.id} UserId: {self.user} {self.names} {self.last_name1} ({self.email}) - {self.local_user_id}"
 
 
 
