@@ -12,4 +12,5 @@ python manage.py collectstatic --no-input
 cp -r locale staticfiles/
 
 # Apply any outstanding database migrations
+python manage.py makemigrations
 python manage.py migrate
