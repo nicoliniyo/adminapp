@@ -85,20 +85,12 @@ msgstr "Signin"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
-msgstr "Creating Apps for the Future"
+msgstr "¿Que hace el Test de Evaluación de Temperatura?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
 msgstr ""
-"We are dedicated to creating open-source applications that are accessible "
-"and beneficial to everyone. Our open-source applications are transparent, "
-"community-driven, and free to use, modify, and distribute. We believe in the "
-"power of open-source software to promote collaboration, innovation, and the "
-"creation of tools that meet the needs of diverse users. Our applications are "
-"designed for general use and can be used by individuals and organizations "
-"seeking practical solutions for everyday tasks. Join us in embracing the "
-"open-source philosophy and discover the endless possibilities of "
-"collaborative software development."
+"The temperature assessment is an operation based on a list of values obtained from the end user or evaluator which, after a simple calculation, obtains a result, which determines as a final result 4 values that can be: sanguine, choleric, melancholic and phlegmatic."
 
 #: bootstrap/templates/nav.html:16
 msgid "home"

@@ -85,7 +85,7 @@ msgstr "Ingresar"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
-msgstr "¿Que hace el Test de Evaluación de Temperatura?"
+msgstr "What does the Temperature Assessment Test do?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
