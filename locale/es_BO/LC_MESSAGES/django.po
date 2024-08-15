@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-06 10:28-0400\n"
+"POT-Creation-Date: 2024-08-15 15:23-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,19 +29,19 @@ msgstr "Español"
 msgid "Beta"
 msgstr "Beta"
 
-#: aiopen/templates/list_tasks.html:29
+#: aiopen/templates/list_tasks.html:30
 msgid "Send"
 msgstr "Enviar"
 
-#: aiopen/templates/list_tasks.html:46
+#: aiopen/templates/list_tasks.html:47
 msgid "Delete"
 msgstr "Eliminar"
 
-#: aiopen/templates/list_tasks.html:54 aiopen/templates/list_tasks_user.html:52
+#: aiopen/templates/list_tasks.html:55 aiopen/templates/list_tasks_user.html:52
 msgid "No answers yet"
 msgstr "No hay respuestas todavia"
 
-#: aiopen/templates/list_tasks.html:55 aiopen/templates/list_tasks_user.html:53
+#: aiopen/templates/list_tasks.html:56 aiopen/templates/list_tasks_user.html:53
 msgid "Waiting for you to make a question"
 msgstr "Esperando a que me hagas una pregunta"
 
@@ -85,25 +85,15 @@ msgstr "Ingresar"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
-msgstr "Creando Apps para el futuro"
+msgstr "¿Que hace el Test de Evaluación de Temperatura?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
 msgstr ""
-"Nos apasiona crear aplicaciones de código abierto que sean accesibles y "
-"beneficiosas para todos. Nuestro compromiso con el desarrollo de código "
-"abierto garantiza que nuestras aplicaciones sean transparentes, impulsadas "
-"por la comunidad y estén disponibles gratuitamente para que cualquiera pueda "
-"usarlas, modificarlas y distribuirlas. Creemos que el software de código "
-"abierto promueve la colaboración, la innovación y la creación de "
-"herramientas que realmente abordan las necesidades de diversos usuarios. "
-"Nuestras aplicaciones de código abierto están diseñadas para uso general, "
-"atendiendo a una amplia gama de individuos y organizaciones que buscan "
-"soluciones prácticas para las tareas diarias. Ya sea que sea un estudiante, "
-"un profesional o simplemente busque herramientas útiles para mejorar su "
-"productividad, nuestras aplicaciones de código abierto están aquí para "
-"empoderarlo. Únase a nosotros para adoptar la filosofía de código abierto y "
-"descubra las infinitas posibilidades del desarrollo de software colaborativo."
+"La evaluación de temperatura es una operación basada en un listado de "
+"valores obtenidos del usuario final o evaluador el cual, después de un "
+"simple cálculo, obtiene un resultado, el cual determina como resultado final "
+"4 valores que pueden ser: sanguíneo, colérico, melancólico y flemático."
 
 #: bootstrap/templates/nav.html:16
 msgid "home"
