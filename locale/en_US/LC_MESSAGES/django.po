@@ -71,7 +71,7 @@ msgstr "Licences"
 
 #: bootstrap/templates/baseWithHeader.html:63
 msgid "just apps!"
-msgstr "Prueba En Linea"
+msgstr "Online Test"
 
 #: bootstrap/templates/baseWithHeader.html:73
 msgid "Register"
@@ -85,7 +85,7 @@ msgstr "Signin"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
-msgstr "¿Que hace el Test de Evaluación de Temperatura?"
+msgstr "What does the Temperature Assessment Test do?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
