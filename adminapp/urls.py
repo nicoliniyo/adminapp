@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from actividades.views import ActividadViewSet
+from totem_temperamentos.views import OrganizacionViewSet, PreguntaViewSet, PruebaViewSet, PruebaResultadoViewSet
 from reviews.views import ProductViewSet, ImageViewSet
 from users_profiles.views import UserProfileViewSet
 from rest_framework.routers import DefaultRouter
@@ -14,6 +15,10 @@ router = DefaultRouter()
 router.register(r'product', ProductViewSet, basename='Product')
 router.register(r'image', ImageViewSet, basename='Image')
 router.register(r'actividad', ActividadViewSet, basename='Actividad')
+router.register(r'organizacion', OrganizacionViewSet, basename='Organizacion Temperamentos')
+router.register(r'pregunta', PreguntaViewSet, basename='Preguntas Temperamentos')
+router.register(r'prueba', PruebaViewSet, basename='Prueba Temperamentos')
+router.register(r'resultado', PruebaResultadoViewSet, basename='PruebaResultado Temperamentos')
 router.register(r'userprofile', UserProfileViewSet, basename='UserProfile')
 
 
