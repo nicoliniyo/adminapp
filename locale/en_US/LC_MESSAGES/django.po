@@ -89,8 +89,7 @@ msgstr "What does the Temperature Assessment Test do?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
-msgstr ""
-"The temperature assessment is an operation based on a list of values obtained from the end user or evaluator which, after a simple calculation, obtains a result, which determines as a final result 4 values that can be: sanguine, choleric, melancholic and phlegmatic."
+msgstr "The temperature assessment is an operation based on a list of values obtained from the end user or evaluator which, after a simple calculation, obtains a result, which determines as a final result 4 values that can be: sanguine, choleric, melancholic and phlegmatic."
 
 #: bootstrap/templates/nav.html:16
 msgid "home"
