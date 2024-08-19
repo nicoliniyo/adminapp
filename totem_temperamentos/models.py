@@ -1,5 +1,7 @@
 from django.db import models
 from users_profiles.models import UsersProfile
+from django.forms import formset_factory
+from django import forms
 
 class Organizacion(models.Model):
     nombre = models.CharField(max_length=255)
@@ -17,6 +19,16 @@ class Pregunta(models.Model):
 
     def __str__(self):
         return f"{self.nro_pregunta} - {self.pregunta}"
+
+class PreguntaForm(forms.ModelForm):
+    class Meta:
+        model = Pregunta
+        fields = ('tipo', 'nro_pregunta', 'columna', 'pregunta')
+
+
+# PreguntaFormSet = formset_factory(PreguntaForm, extra=40)
+PreguntaFormSet = forms.modelformset_factory(Pregunta, fields='__all__')
+
 
 class Prueba(models.Model):
     profile = models.ForeignKey(UsersProfile, on_delete=models.CASCADE)

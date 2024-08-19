@@ -28,6 +28,7 @@ urlpatterns = i18n_patterns(
     path('auth/', include('auth.urls')),
     path('api/', include(router.urls)),
     path('personas/', include('personas.urls')),
+    path('preguntas/', include('totem_temperamentos.urls')),
     path('', bootstrapviews.home, name='index'),
     path('signup/', uiviews.signup, name='signup'),
     path('signin/', uiviews.signin, name='signin'),
