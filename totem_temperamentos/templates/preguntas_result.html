@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section section-buttons">
+    <div class="container">
+        <div class="title">
+            <h2>Resultados Prueba</h2>
+        </div>
+        <div class="title">
+            <h3>{{error}}</h3>
+            <!--            <a href="{% url 'pregunta_create' %}">Create new test</a>-->
+        </div>
+    </div>
+    <div class="col-lg-10">
+        <div class="">
+            <ul>
+                <li>Sanguíneo: {{ data.count_a }}</li>
+                <li>Colérico: {{ data.count_b }}</li>
+                <li>Melancólico: {{ data.count_c }}</li>
+                <li>Flemático: {{ data.count_d }}</li>
+
+            </ul>
+            <div class="">
+                {{ ai_response }}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
