@@ -4,9 +4,13 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.forms import formset_factory
 from rest_framework import viewsets
+from .constants import TEMPERATURA_PROMPT
 from .serializers import OrganizacionSerializer, PreguntaSerializer, PruebaSerializer, Prueba_resultadoSerializer
 
 from .models import Organizacion, Pregunta, Prueba, Prueba_resultado, PreguntaForm, PreguntaFormSet
+
+import aiopen
+
 
 
 class OrganizacionViewSet(viewsets.ModelViewSet):
@@ -72,13 +76,18 @@ def create_preguntas(request):
         }
         # Print the counts for debugging
         print(data)
+        prompt_data = TEMPERATURA_PROMPT + " Sanguíneo:" + str(data['count_a']) + " Sanguíneo:" + str(data['count_a'])  + " Colérico" + str(data['count_b']) + " Melancólico" + str(data['count_c']) + " Flemático" + str(data['count_d'])
+        ai_response = aiopen.views.send_request(prompt_data)
+        return render(request, 'preguntas_result.html', {'data': data, 'ai_response': ai_response, })
         # Do something else after saving the formset
         if formset.is_valid():
+
             print('SAVE')
         else:
             # Print or log formset errors to see what went wrong
             print(formset.errors)
+
     else:
         formset = formset_factory(PreguntaForm, extra=40)
 
-    return render(request, 'preguntas_create.html', {'formset': formset, 'error': formset.errors})
+    return render(request, 'preguntas_create.html', {'formset': formset, })
