@@ -1,0 +1,464 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="section section-buttons">
+    <div class="container">
+        <div class="title">
+            <h2>Temperamentos - Test</h2>
+        </div>
+        <div class="title">
+            <h3>{{error}}</h3>
+        </div>
+        <div class="row">
+            <form method="post">
+                {% csrf_token %}
+                <h2>FORTALEZAS (Strength)</h2>
+                <table>
+                    <!--                    <td>Fortaleza</td>-->
+                    <tr>
+                        <th>Columna</th>
+                        <th>A</th>
+                        <th>Columna</th>
+                        <th>B</th>
+                        <th>Columna</th>
+                        <th>C</th>
+                        <th>Columna</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_1" name="fortaleza_a_1"></td>
+                        <td><label for="fortaleza_a_1">Animado</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_1" name="fortaleza_b_1"></td>
+                        <td><label for="fortaleza_b_1">Aventurero</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_1" name="fortaleza_c_1"></td>
+                        <td><label for="fortaleza_c_1">Analítico</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_1" name="fortaleza_d_1"></td>
+                        <td><label for="fortaleza_d_1">Adaptable</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_2" name="fortaleza_a_2"></td>
+                        <td><label for="fortaleza_a_2">Juguetón</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_2" name="fortaleza_b_2"></td>
+                        <td><label for="fortaleza_b_2">Persuasivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_2" name="fortaleza_c_2"></td>
+                        <td><label for="fortaleza_c_2">Persistente</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_2" name="fortaleza_d_2"></td>
+                        <td><label for="fortaleza_d_2">Plácido</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_3" name="fortaleza_a_3"></td>
+                        <td><label for="fortaleza_a_3">Sociable</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_3" name="fortaleza_b_3"></td>
+                        <td><label for="fortaleza_b_3">Decidido</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_3" name="fortaleza_c_3"></td>
+                        <td><label for="fortaleza_c_3">Abnegado</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_3" name="fortaleza_d_3"></td>
+                        <td><label for="fortaleza_d_3">Sumiso</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_4" name="fortaleza_a_4"></td>
+                        <td><label for="fortaleza_a_4">Convincente</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_4" name="fortaleza_b_4"></td>
+                        <td><label for="fortaleza_b_4">Competitivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_4" name="fortaleza_c_4"></td>
+                        <td><label for="fortaleza_c_4">Considerado</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_4" name="fortaleza_d_4"></td>
+                        <td><label for="fortaleza_d_4">Controlado</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_5" name="fortaleza_a_5"></td>
+                        <td><label for="fortaleza_a_5">Entusiasta</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_5" name="fortaleza_b_5"></td>
+                        <td><label for="fortaleza_b_5">Inventivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_5" name="fortaleza_c_5"></td>
+                        <td><label for="fortaleza_c_5">Respetuoso</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_5" name="fortaleza_d_5"></td>
+                        <td><label for="fortaleza_d_5">Reservado</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_6" name="fortaleza_a_6"></td>
+                        <td><label for="fortaleza_a_6">Enérgico</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_6" name="fortaleza_b_6"></td>
+                        <td><label for="fortaleza_b_6">Autosuficiente</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_6" name="fortaleza_c_6"></td>
+                        <td><label for="fortaleza_c_6">Sensible</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_6" name="fortaleza_d_6"></td>
+                        <td><label for="fortaleza_d_6">Contento</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_7" name="fortaleza_a_7"></td>
+                        <td><label for="fortaleza_a_7">Activista</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_7" name="fortaleza_b_7"></td>
+                        <td><label for="fortaleza_b_7">Positivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_7" name="fortaleza_c_7"></td>
+                        <td><label for="fortaleza_c_7">Planificador</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_7" name="fortaleza_d_7"></td>
+                        <td><label for="fortaleza_d_7">Paciente</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_8" name="fortaleza_a_8"></td>
+                        <td><label for="fortaleza_a_8">Espontáneo</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_8" name="fortaleza_b_8"></td>
+                        <td><label for="fortaleza_b_8">Seguro</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_8" name="fortaleza_c_8"></td>
+                        <td><label for="fortaleza_c_8">Puntual</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_8" name="fortaleza_d_8"></td>
+                        <td><label for="fortaleza_d_8">Tímido</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_9" name="fortaleza_a_9"></td>
+                        <td><label for="fortaleza_a_9">Optimista</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_9" name="fortaleza_b_9"></td>
+                        <td><label for="fortaleza_b_9">Abierto</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_9" name="fortaleza_c_9"></td>
+                        <td><label for="fortaleza_c_9">Ordenado</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_9" name="fortaleza_d_9"></td>
+                        <td><label for="fortaleza_d_9">Atento</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_10" name="fortaleza_a_10"></td>
+                        <td><label for="fortaleza_a_10">Humorístico</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_10" name="fortaleza_b_10"></td>
+                        <td><label for="fortaleza_b_10">Dominante</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_10" name="fortaleza_c_10"></td>
+                        <td><label for="fortaleza_c_10">Fiel</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_10" name="fortaleza_d_10"></td>
+                        <td><label for="fortaleza_d_10">Amigable</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_11" name="fortaleza_a_11"></td>
+                        <td><label for="fortaleza_a_11">Encantador</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_11" name="fortaleza_b_11"></td>
+                        <td><label for="fortaleza_b_11">Osado</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_11" name="fortaleza_c_11"></td>
+                        <td><label for="fortaleza_c_11">Detallista</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_11" name="fortaleza_d_11"></td>
+                        <td><label for="fortaleza_d_11">Diplomático</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_12" name="fortaleza_a_12"></td>
+                        <td><label for="fortaleza_a_12">Alegre</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_12" name="fortaleza_b_12"></td>
+                        <td><label for="fortaleza_b_12">Confiado</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_12" name="fortaleza_c_12"></td>
+                        <td><label for="fortaleza_c_12">Culto</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_12" name="fortaleza_d_12"></td>
+                        <td><label for="fortaleza_d_12">Constante</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_13" name="fortaleza_a_13"></td>
+                        <td><label for="fortaleza_a_13">Inspirador</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_13" name="fortaleza_b_13"></td>
+                        <td><label for="fortaleza_b_13">Independiente</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_13" name="fortaleza_c_13"></td>
+                        <td><label for="fortaleza_c_13">Idealista</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_13" name="fortaleza_d_13"></td>
+                        <td><label for="fortaleza_d_13">Inofensivo</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_14" name="fortaleza_a_14"></td>
+                        <td><label for="fortaleza_a_14">Cálido</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_14" name="fortaleza_b_14"></td>
+                        <td><label for="fortaleza_b_14">Decisivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_14" name="fortaleza_c_14"></td>
+                        <td><label for="fortaleza_c_14">Introspectivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_14" name="fortaleza_d_14"></td>
+                        <td><label for="fortaleza_d_14">Humor seco</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_15" name="fortaleza_a_15"></td>
+                        <td><label for="fortaleza_a_15">Cordial</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_15" name="fortaleza_b_15"></td>
+                        <td><label for="fortaleza_b_15">Instigador</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_15" name="fortaleza_c_15"></td>
+                        <td><label for="fortaleza_c_15">Músico</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_15" name="fortaleza_d_15"></td>
+                        <td><label for="fortaleza_d_15">Conciliador</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_16" name="fortaleza_a_16"></td>
+                        <td><label for="fortaleza_a_16">Conversador</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_16" name="fortaleza_b_16"></td>
+                        <td><label for="fortaleza_b_16">Tenaz</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_16" name="fortaleza_c_16"></td>
+                        <td><label for="fortaleza_c_16">Considerado</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_16" name="fortaleza_d_16"></td>
+                        <td><label for="fortaleza_d_16">Tolerante</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_17" name="fortaleza_a_17"></td>
+                        <td><label for="fortaleza_a_17">Vivaz</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_17" name="fortaleza_b_17"></td>
+                        <td><label for="fortaleza_b_17">Líder</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_17" name="fortaleza_c_17"></td>
+                        <td><label for="fortaleza_c_17">Leal</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_17" name="fortaleza_d_17"></td>
+                        <td><label for="fortaleza_d_17">Escucha</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_18" name="fortaleza_a_18"></td>
+                        <td><label for="fortaleza_a_18">Listo</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_18" name="fortaleza_b_18"></td>
+                        <td><label for="fortaleza_b_18">Jefe</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_18" name="fortaleza_c_18"></td>
+                        <td><label for="fortaleza_c_18">Organizado</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_18" name="fortaleza_d_18"></td>
+                        <td><label for="fortaleza_d_18">Contento</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_19" name="fortaleza_a_19"></td>
+                        <td><label for="fortaleza_a_19">Popular</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_19" name="fortaleza_b_19"></td>
+                        <td><label for="fortaleza_b_19">Productivo</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_19" name="fortaleza_c_19"></td>
+                        <td><label for="fortaleza_c_19">Perfeccionista</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_19" name="fortaleza_d_19"></td>
+                        <td><label for="fortaleza_d_19">Permisivo</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="fortaleza_a_20" name="fortaleza_a_20"></td>
+                        <td><label for="fortaleza_a_20">Jovial</label></td>
+                        <td><input type="checkbox" id="fortaleza_b_20" name="fortaleza_b_20"></td>
+                        <td><label for="fortaleza_b_20">Atrevido</label></td>
+                        <td><input type="checkbox" id="fortaleza_c_20" name="fortaleza_c_20"></td>
+                        <td><label for="fortaleza_c_20">Se porta bien</label></td>
+                        <td><input type="checkbox" id="fortaleza_d_20" name="fortaleza_d_20"></td>
+                        <td><label for="fortaleza_d_20">Equilibrado</label></td>
+                    </tr>
+                    </td>
+
+
+                </table>
+                <h2>DEBILIDASDES (Weakness)</h2>
+
+                <table>
+                    <!--                    <td>Fortaleza</td>-->
+                    <tr>
+                        <th>Columna</th>
+                        <th>A</th>
+                        <th>Columna</th>
+                        <th>B</th>
+                        <th>Columna</th>
+                        <th>C</th>
+                        <th>Columna</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_1" name="debilidad_a_1"></td>
+                        <td><label for="debilidad_a_1">Animado</label></td>
+                        <td><input type="checkbox" id="debilidad_b_1" name="debilidad_b_1"></td>
+                        <td><label for="debilidad_b_1">Aventurero</label></td>
+                        <td><input type="checkbox" id="debilidad_c_1" name="debilidad_c_1"></td>
+                        <td><label for="debilidad_c_1">Analítico</label></td>
+                        <td><input type="checkbox" id="debilidad_d_1" name="debilidad_d_1"></td>
+                        <td><label for="debilidad_d_1">Adaptable</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_2" name="debilidad_a_2"></td>
+                        <td><label for="debilidad_a_2">Juguetón</label></td>
+                        <td><input type="checkbox" id="debilidad_b_2" name="debilidad_b_2"></td>
+                        <td><label for="debilidad_a_2">Persuasivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_2" name="debilidad_c_2"></td>
+                        <td><label for="debilidad_c_2">Persistente</label></td>
+                        <td><input type="checkbox" id="debilidad_d_2" name="debilidad_d_2"></td>
+                        <td><label for="debilidad_d_2">Plácido</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_3" name="debilidad_a_3"></td>
+                        <td><label for="debilidad_a_3">Sociable</label></td>
+                        <td><input type="checkbox" id="debilidad_b_3" name="debilidad_b_3"></td>
+                        <td><label for="debilidad_a_3">Decidido</label></td>
+                        <td><input type="checkbox" id="debilidad_c_3" name="debilidad_c_3"></td>
+                        <td><label for="debilidad_c_3">Abnegado</label></td>
+                        <td><input type="checkbox" id="debilidad_d_3" name="debilidad_d_3"></td>
+                        <td><label for="debilidad_d_3">Sumiso</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_4" name="debilidad_a_4"></td>
+                        <td><label for="debilidad_a_4">Convincente</label></td>
+                        <td><input type="checkbox" id="debilidad_b_4" name="debilidad_b_4"></td>
+                        <td><label for="debilidad_a_4">Competitivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_4" name="debilidad_c_4"></td>
+                        <td><label for="debilidad_c_4">Considerado</label></td>
+                        <td><input type="checkbox" id="debilidad_d_4" name="debilidad_d_4"></td>
+                        <td><label for="debilidad_d_4">Controlado</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_5" name="debilidad_a_5"></td>
+                        <td><label for="debilidad_a_5">Entusiasta</label></td>
+                        <td><input type="checkbox" id="debilidad_b_5" name="debilidad_b_5"></td>
+                        <td><label for="debilidad_b_5">Inventivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_5" name="debilidad_c_5"></td>
+                        <td><label for="debilidad_c_5">Respetuoso</label></td>
+                        <td><input type="checkbox" id="debilidad_d_5" name="debilidad_d_5"></td>
+                        <td><label for="debilidad_d_5">Reservado</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_6" name="debilidad_a_6"></td>
+                        <td><label for="debilidad_a_6">Enérgico</label></td>
+                        <td><input type="checkbox" id="debilidad_b_6" name="debilidad_b_6"></td>
+                        <td><label for="debilidad_b_6">Autosuficiente</label></td>
+                        <td><input type="checkbox" id="debilidad_c_6" name="debilidad_c_6"></td>
+                        <td><label for="debilidad_c_6">Sensible</label></td>
+                        <td><input type="checkbox" id="debilidad_d_6" name="debilidad_d_6"></td>
+                        <td><label for="debilidad_d_6">Contento</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_7" name="debilidad_a_7"></td>
+                        <td><label for="debilidad_a_7">Activista</label></td>
+                        <td><input type="checkbox" id="debilidad_b_7" name="debilidad_b_7"></td>
+                        <td><label for="debilidad_b_7">Positivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_7" name="debilidad_c_7"></td>
+                        <td><label for="debilidad_c_7">Planificador</label></td>
+                        <td><input type="checkbox" id="debilidad_d_7" name="debilidad_d_7"></td>
+                        <td><label for="debilidad_d_7">Paciente</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_8" name="debilidad_a_8"></td>
+                        <td><label for="debilidad_a_8">Espontáneo</label></td>
+                        <td><input type="checkbox" id="debilidad_b_8" name="debilidad_b_8"></td>
+                        <td><label for="debilidad_b_8">Seguro</label></td>
+                        <td><input type="checkbox" id="debilidad_c_8" name="debilidad_c_8"></td>
+                        <td><label for="debilidad_c_8">Puntual</label></td>
+                        <td><input type="checkbox" id="debilidad_d_8" name="debilidad_d_8"></td>
+                        <td><label for="debilidad_d_8">Tímido</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_9" name="debilidad_a_9"></td>
+                        <td><label for="debilidad_a_9">Optimista</label></td>
+                        <td><input type="checkbox" id="debilidad_b_9" name="debilidad_b_9"></td>
+                        <td><label for="debilidad_b_9">Abierto</label></td>
+                        <td><input type="checkbox" id="debilidad_c_9" name="debilidad_c_9"></td>
+                        <td><label for="debilidad_c_9">Ordenado</label></td>
+                        <td><input type="checkbox" id="debilidad_d_9" name="debilidad_d_9"></td>
+                        <td><label for="debilidad_d_9">Atento</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_10" name="debilidad_a_10"></td>
+                        <td><label for="debilidad_a_10">Humorístico</label></td>
+                        <td><input type="checkbox" id="debilidad_b_10" name="debilidad_b_10"></td>
+                        <td><label for="debilidad_b_10">Dominante</label></td>
+                        <td><input type="checkbox" id="debilidad_c_10" name="debilidad_c_10"></td>
+                        <td><label for="debilidad_c_10">Fiel</label></td>
+                        <td><input type="checkbox" id="debilidad_d_10" name="debilidad_d_10"></td>
+                        <td><label for="debilidad_d_10">Amigable</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_11" name="debilidad_a_11"></td>
+                        <td><label for="debilidad_a_11">Encantador</label></td>
+                        <td><input type="checkbox" id="debilidad_b_11" name="debilidad_b_11"></td>
+                        <td><label for="debilidad_b_11">Osado</label></td>
+                        <td><input type="checkbox" id="debilidad_c_11" name="debilidad_c_11"></td>
+                        <td><label for="debilidad_c_11">Detallista</label></td>
+                        <td><input type="checkbox" id="debilidad_d_11" name="debilidad_d_11"></td>
+                        <td><label for="debilidad_d_11">Diplomático</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_12" name="debilidad_a_12"></td>
+                        <td><label for="debilidad_a_12">Alegre</label></td>
+                        <td><input type="checkbox" id="debilidad_b_12" name="debilidad_b_12"></td>
+                        <td><label for="debilidad_b_12">Confiado</label></td>
+                        <td><input type="checkbox" id="debilidad_c_12" name="debilidad_c_12"></td>
+                        <td><label for="debilidad_c_12">Culto</label></td>
+                        <td><input type="checkbox" id="debilidad_d_12" name="debilidad_d_12"></td>
+                        <td><label for="debilidad_d_12">Constante</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_13" name="debilidad_a_13"></td>
+                        <td><label for="debilidad_a_13">Inspirador</label></td>
+                        <td><input type="checkbox" id="debilidad_b_13" name="debilidad_b_13"></td>
+                        <td><label for="debilidad_b_13">Independiente</label></td>
+                        <td><input type="checkbox" id="debilidad_c_13" name="debilidad_c_13"></td>
+                        <td><label for="debilidad_c_13">Idealista</label></td>
+                        <td><input type="checkbox" id="debilidad_d_13" name="debilidad_d_13"></td>
+                        <td><label for="debilidad_d_13">Inofensivo</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_14" name="debilidad_a_14"></td>
+                        <td><label for="debilidad_a_14">Cálido</label></td>
+                        <td><input type="checkbox" id="debilidad_b_14" name="debilidad_b_14"></td>
+                        <td><label for="debilidad_b_14">Decisivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_14" name="debilidad_c_14"></td>
+                        <td><label for="debilidad_c_14">Introspectivo</label></td>
+                        <td><input type="checkbox" id="debilidad_d_14" name="debilidad_d_14"></td>
+                        <td><label for="debilidad_d_14">Humor seco</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_15" name="debilidad_a_15"></td>
+                        <td><label for="debilidad_a_15">Cordial</label></td>
+                        <td><input type="checkbox" id="debilidad_b_15" name="debilidad_b_15"></td>
+                        <td><label for="debilidad_b_15">Instigador</label></td>
+                        <td><input type="checkbox" id="debilidad_c_15" name="debilidad_c_15"></td>
+                        <td><label for="debilidad_c_15">Músico</label></td>
+                        <td><input type="checkbox" id="debilidad_d_15" name="debilidad_d_15"></td>
+                        <td><label for="debilidad_d_15">Conciliador</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_16" name="debilidad_a_16"></td>
+                        <td><label for="debilidad_a_16">Conversador</label></td>
+                        <td><input type="checkbox" id="debilidad_b_16" name="debilidad_b_16"></td>
+                        <td><label for="debilidad_b_16">Tenaz</label></td>
+                        <td><input type="checkbox" id="debilidad_c_16" name="debilidad_c_16"></td>
+                        <td><label for="debilidad_c_16">Considerado</label></td>
+                        <td><input type="checkbox" id="debilidad_d_16" name="debilidad_d_16"></td>
+                        <td><label for="debilidad_d_16">Tolerante</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_17" name="debilidad_a_17"></td>
+                        <td><label for="debilidad_a_17">Vivaz</label></td>
+                        <td><input type="checkbox" id="debilidad_b_17" name="debilidad_b_17"></td>
+                        <td><label for="debilidad_b_17">Líder</label></td>
+                        <td><input type="checkbox" id="debilidad_c_17" name="debilidad_c_17"></td>
+                        <td><label for="debilidad_c_17">Leal</label></td>
+                        <td><input type="checkbox" id="debilidad_d_17" name="debilidad_d_17"></td>
+                        <td><label for="debilidad_d_17">Escucha</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_18" name="debilidad_a_18"></td>
+                        <td><label for="debilidad_a_18">Listo</label></td>
+                        <td><input type="checkbox" id="debilidad_b_18" name="debilidad_b_18"></td>
+                        <td><label for="debilidad_b_18">Jefe</label></td>
+                        <td><input type="checkbox" id="debilidad_c_18" name="debilidad_c_18"></td>
+                        <td><label for="debilidad_c_18">Organizado</label></td>
+                        <td><input type="checkbox" id="debilidad_d_18" name="debilidad_d_18"></td>
+                        <td><label for="debilidad_d_18">Contento</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_19" name="debilidad_a_19"></td>
+                        <td><label for="debilidad_a_19">Popular</label></td>
+                        <td><input type="checkbox" id="debilidad_b_19" name="debilidad_b_19"></td>
+                        <td><label for="debilidad_b_19">Productivo</label></td>
+                        <td><input type="checkbox" id="debilidad_c_19" name="debilidad_c_19"></td>
+                        <td><label for="debilidad_c_19">Perfeccionista</label></td>
+                        <td><input type="checkbox" id="debilidad_d_19" name="debilidad_d_19"></td>
+                        <td><label for="debilidad_d_19">Permisivo</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="debilidad_a_20" name="debilidad_a_20"></td>
+                        <td><label for="debilidad_a_20">Jovial</label></td>
+                        <td><input type="checkbox" id="debilidad_b_20" name="debilidad_b_20"></td>
+                        <td><label for="debilidad_b_20">Atrevido</label></td>
+                        <td><input type="checkbox" id="debilidad_c_20" name="debilidad_c_20"></td>
+                        <td><label for="debilidad_c_20">Se porta bien</label></td>
+                        <td><input type="checkbox" id="debilidad_d_20" name="debilidad_d_20"></td>
+                        <td><label for="debilidad_d_20">Equilibrado</label></td>
+                    </tr>
+                    </td>
+
+
+                </table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

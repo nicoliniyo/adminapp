@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section section-buttons">
+    <div class="container">
+        <div class="title">
+            <h2>Tomar Prueba</h2>
+        </div>
+        <div class="title">
+            <h3>{{error}}</h3>
+            <a href="{% url 'pregunta_create' %}">Create new test</a>
+        </div>
+        </div>
+        <div class="row">
+            <ul>
+<!--                {% for pregunta in preguntas %}-->
+                <li>
+<!--                    {{ persona.nomcompleto }} ({{ persona.nrodocumento }})-->
+<!--                    <a href="{% url 'persona_update' persona.id %}">Edit</a>-->
+<!--                    <a href="{% url 'persona_delete' persona.id %}">Delete</a>-->
+                </li>
+<!--                {% endfor %}-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
