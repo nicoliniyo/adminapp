@@ -41,15 +41,71 @@ def pregunta_list(request):
     return render(request, 'preguntas_list.html', {})
 
 
+def eval_preguntas(request):
+    print("request.POST:", request.POST)
+    print("request.POST.items():", request.POST.items())
+    results = {'a': 0, 'b': 0, 'c': 0, 'd': 0}
+
+    for key, value in request.POST.items():
+        if 'fortaleza_' in key or 'debilidad_' in key:
+            print(key, value)
+            if 'a' in value:
+                results['a'] += 1
+            elif 'b' in value:
+                results['b'] += 1
+            elif 'c' in value:
+                results['c'] += 1
+            elif 'd' in value:
+                results['d'] += 1
+
+    return results
+
 def create_preguntas(request):
+    print('CREATE PREGUNTAS')
+    if request.method == 'POST':
+        print('POST CALL')
+        form_items = [(key, value) for key, value in request.POST.items()]
+        print("Form Items:")
+        for item in form_items:
+            print(item)
+
+        formset = PreguntaFormSet(request.POST)
+        data = eval_preguntas(request)
+        # Print the counts for debugging
+        print(data)
+        prompt_data = TEMPERATURA_PROMPT + " Sanguíneo:" + str(data['a']) + " Colérico" + str(data['b']) + " Melancólico" + str(data['c']) + " Flemático" + str(data['d'])
+        ai_response = aiopen.views.send_request(prompt_data)
+
+
+        return render(request, 'preguntas_result.html', {
+            'san': (data['a']),
+            'col' : (data['b']),
+            'mel' : (data['c']),
+            'fle' : (data['d']),
+            'ai_response': ai_response, })
+        # Do something else after saving the formset
+        if formset.is_valid():
+
+            print('SAVE')
+        else:
+            # Print or log formset errors to see what went wrong
+            print(formset.errors)
+    else:
+        formset = formset_factory(PreguntaForm, extra=40)
+
+    return render(request, 'preguntas_create.html', {'formset': formset, })
+
+
+def create_preguntas_t(request):
     print('CREATE PREGUNTAS')
     if request.method == 'POST':
         print('POST CALL')
         formset = PreguntaFormSet(request.POST)
         # form_items = [(key, value) for key, value in request.POST.items()]
-        # print("Form Items:")
-        # for item in form_items:
-        #     print(item)
+        form_items = [(key, value) for key, value in request.POST.items()]
+        print("Form Items:")
+        for item in form_items:
+            print(item)
 
         count_a = 0
         count_b = 0
