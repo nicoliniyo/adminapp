@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.forms import formset_factory
 from rest_framework import viewsets
-from .constants import TEMPERATURA_PROMPT
+from .constants import TEMPERATURA_PROMPT, build_prompt
 from .serializers import OrganizacionSerializer, PreguntaSerializer, PruebaSerializer, Prueba_resultadoSerializer
 
 from .models import Organizacion, Pregunta, Prueba, Prueba_resultado, PreguntaForm, PreguntaFormSet
@@ -73,7 +73,8 @@ def create_preguntas(request):
         data = eval_preguntas(request)
         # Print the counts for debugging
         print(data)
-        prompt_data = TEMPERATURA_PROMPT + " Sanguíneo:" + str(data['a']) + " Colérico" + str(data['b']) + " Melancólico" + str(data['c']) + " Flemático" + str(data['d'])
+        prompt_data = build_prompt(" Sanguíneo:" + str(data['a']) + " Colérico" + str(data['b']) + " Melancólico" + str(data['c']) + " Flemático" + str(data['d']))
+
         ai_response = aiopen.views.send_request(prompt_data)
 
 
