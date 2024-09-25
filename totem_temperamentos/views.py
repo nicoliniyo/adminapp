@@ -63,11 +63,11 @@ def eval_preguntas(request):
 def create_preguntas(request):
     print('CREATE PREGUNTAS')
     if request.method == 'POST':
-        print('POST CALL')
+        # print('POST CALL')
         form_items = [(key, value) for key, value in request.POST.items()]
-        print("Form Items:")
-        for item in form_items:
-            print(item)
+        # print("Form Items:")
+        # for item in form_items:
+        #     print(item)
 
         formset = PreguntaFormSet(request.POST)
         data = eval_preguntas(request)
@@ -76,7 +76,10 @@ def create_preguntas(request):
         prompt_data = build_prompt(" Sanguíneo:" + str(data['a']) + " Colérico" + str(data['b']) + " Melancólico" + str(data['c']) + " Flemático" + str(data['d']))
 
         ai_response = aiopen.views.send_request(prompt_data)
-
+        html_ai_response = (ai_response);
+        print('CONVERTed html: {0}'.format(html_ai_response))
+        return render(request, 'preguntas_result.html',
+                      {'data': data, 'ai_response': html_ai_response, })
 
         return render(request, 'preguntas_result.html', {
             'san': (data['a']),
@@ -97,54 +100,22 @@ def create_preguntas(request):
     return render(request, 'preguntas_create.html', {'formset': formset, })
 
 
-def create_preguntas_t(request):
-    print('CREATE PREGUNTAS')
-    if request.method == 'POST':
-        print('POST CALL')
-        formset = PreguntaFormSet(request.POST)
-        # form_items = [(key, value) for key, value in request.POST.items()]
-        form_items = [(key, value) for key, value in request.POST.items()]
-        print("Form Items:")
-        for item in form_items:
-            print(item)
+def convert_text_to_html(text):
+    """Converts plain text to HTML, adding break lines after certain characters.
 
-        count_a = 0
-        count_b = 0
-        count_c = 0
-        count_d = 0
+    Args:
+        text (str): The plain text to convert.
 
-        # Iterate over form items to count occurrences
-        for key, value in request.POST.items():
-            if '_a_' in key:
-                count_a += 1
-            elif '_b_' in key:
-                count_b += 1
-            elif '_c_' in key:
-                count_c += 1
-            elif '_d_' in key:
-                count_d += 1
+    Returns:
+        str: The converted HTML text.
+    """
 
-        # Store the counts in a dictionary
-        data = {
-            'count_a': count_a,
-            'count_b': count_b,
-            'count_c': count_c,
-            'count_d': count_d,
-        }
-        # Print the counts for debugging
-        print(data)
-        prompt_data = TEMPERATURA_PROMPT + " Sanguíneo:" + str(data['count_a']) + " Sanguíneo:" + str(data['count_a'])  + " Colérico" + str(data['count_b']) + " Melancólico" + str(data['count_c']) + " Flemático" + str(data['count_d'])
-        ai_response = aiopen.views.send_request(prompt_data)
-        return render(request, 'preguntas_result.html', {'data': data, 'ai_response': ai_response, })
-        # Do something else after saving the formset
-        if formset.is_valid():
-
-            print('SAVE')
+    html = ""
+    for char in text:
+        if char in ':"':
+            html += char + "<br/>"
+        elif char == ".":
+            html += char + "<br/>"
         else:
-            # Print or log formset errors to see what went wrong
-            print(formset.errors)
-
-    else:
-        formset = formset_factory(PreguntaForm, extra=40)
-
-    return render(request, 'preguntas_create.html', {'formset': formset, })
+            html += char
+    return html

@@ -35,13 +35,13 @@ def send_request(user_input):
 
     try:
         response = requests.post(api_url, headers=headers, data=payload)
-        print("RESPONSE")
-        print(response)
+        # print("RESPONSE")
+        # print(response)
         response.raise_for_status()  # Raise an exception for non-2xx status codes
         result = response.json().get("choices")[0].get("message").get("content")
 
-        print('RESULT')
-        print(result)
+        # print('RESULT')
+        # print(result)
 
         return result
     except requests.exceptions.RequestException as e:
