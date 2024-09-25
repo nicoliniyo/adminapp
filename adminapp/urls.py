@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from actividades.views import ActividadViewSet
+from totem_temperamentos.views import OrganizacionViewSet, PreguntaViewSet, PruebaViewSet, PruebaResultadoViewSet
 from reviews.views import ProductViewSet, ImageViewSet
 from users_profiles.views import UserProfileViewSet
 from rest_framework.routers import DefaultRouter
@@ -14,6 +15,10 @@ router = DefaultRouter()
 router.register(r'product', ProductViewSet, basename='Product')
 router.register(r'image', ImageViewSet, basename='Image')
 router.register(r'actividad', ActividadViewSet, basename='Actividad')
+router.register(r'organizacion', OrganizacionViewSet, basename='Organizacion Temperamentos')
+router.register(r'pregunta', PreguntaViewSet, basename='Preguntas Temperamentos')
+router.register(r'prueba', PruebaViewSet, basename='Prueba Temperamentos')
+router.register(r'resultado', PruebaResultadoViewSet, basename='PruebaResultado Temperamentos')
 router.register(r'userprofile', UserProfileViewSet, basename='UserProfile')
 
 
@@ -23,6 +28,7 @@ urlpatterns = i18n_patterns(
     path('auth/', include('auth.urls')),
     path('api/', include(router.urls)),
     path('personas/', include('personas.urls')),
+    path('preguntas/', include('totem_temperamentos.urls')),
     path('', bootstrapviews.home, name='index'),
     path('signup/', uiviews.signup, name='signup'),
     path('signin/', uiviews.signin, name='signin'),
