@@ -39,10 +39,16 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale/',
+    os.path.join(BASE_DIR, 'staticfiles/locale'),
+    os.path.join(BASE_DIR, '/locale')
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '10.0.2.2',
+    '127.0.0.1',
+    'localhost',
+    '*.supabase.com',
+]
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -68,7 +74,8 @@ INSTALLED_APPS = [
     'common',
     'actividades',
     'aiopen',
-
+    'users_profiles',
+    'totem_temperamentos'
 ]
 
 MIDDLEWARE = [
@@ -119,7 +126,8 @@ WSGI_APPLICATION = 'adminapp.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/adminappdb',
+        default='postgresql://postgres:postgres@localhost:5432/postgres',
+        # default='postgresql://postgres.hanchuohygsvglihlrnr:viaAmalteaN.02@aws-0-us-east-1.pooler.supabase.com:6543/postgres',
         conn_max_age=600
     )
 }
@@ -148,7 +156,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-bo'
 
 TIME_ZONE = 'UTC'
 
@@ -164,6 +172,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # This production code might break development mode, so we check whether we're in DEBUG mode
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -194,18 +203,26 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.test-cors.org",
+    'http://10.0.2.2:8000',
+    'https://*.render.com',
+    'https://*.onrender.com',
+    'https://*.groq.com',
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.render.com',
+    'https://*.onrender.com',
+    'https://*.groq.com',
     'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'http://127.0.0.1:8000',
+    'http://10.0.2.2:8000'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
 SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False

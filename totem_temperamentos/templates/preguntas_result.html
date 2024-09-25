@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .table td, .table th {
+      border-top: 1px solid #999;
+      border-bottom: 1px solid #999;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+    .table th:nth-child(2),
+  .table td:nth-child(2) {
+    text-align: center;
+  }
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script>
+function generatePDF() {
+let pdf = new jsPDF("p", "pt", "a4");
+let options = { pagesplit: true };
+
+pdf.addHTML($("body"), options, () => {
+pdf.save("ReporteTemperamento.pdf");
+});
+}
+</script>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <h1>Resultados Prueba</h1>
+        </div>
+        <div class="row">
+            <p class="lead">Septiembre 25, 2024</p>
+            <br/>
+        </div>
+        <div class="row">
+            <h3>{{error}}</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Name:</strong> John Doe</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Email:</strong> johndoe@example.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><strong>Address:</strong> 123 Main St, Anytown, USA</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title">
+                <h2>Temperamentos</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Valor</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Sanguíneo</td>
+                        <td>{{ san }}</td>
+                    </tr>
+                    <tr>
+                        <td>Colérico</td>
+                        <td>{{ col }}</td>
+                    </tr>
+                    <tr>
+                        <td>Melancólico</td>
+                        <td>{{ mel }}</td>
+                    </tr>
+                    <tr>
+                        <td>Flemático</td>
+                        <td>{{ fle }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="">
+
+                    {% autoescape off %}
+                    {{ ai_response }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button class="btn btn-primary" onclick="generatePDF()">Descarga el PDF</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

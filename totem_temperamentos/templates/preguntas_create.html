@@ -1,0 +1,353 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    table {
+    border-collapse: collapse;
+  }
+
+
+  td {
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  td input[type="radio"] {
+    float: right;
+  }
+    table tr:nth-child(odd) {
+    background-color: #ccc; /* light gray */
+  }
+
+</style>
+
+<div class="section section-buttons">
+    <div class="container">
+        <div class="title">
+            <h1>Temperamentos - Test</h1>
+        </div>
+        <div class="title">
+            <h3>{{error}}</h3>
+        </div>
+        <div class="table">
+            <form method="post">
+                {% csrf_token %}
+                <h2>FORTALEZAS (Strength)</h2>
+                <table>
+                    <tr>
+                        <th>Columna A</th>
+                        <th>Columna B</th>
+                        <th>Columna C</th>
+                        <th>Columna D</th>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_1">Animado</label><input type="radio" id="fortaleza_a_1" name="fortaleza_1" value="a"></td>
+                        <td><label for="fortaleza_b_1">Aventurero</label><input type="radio" id="fortaleza_b_1" name="fortaleza_1" value="b"></td>
+                        <td><label for="fortaleza_c_1">Analítico</label><input type="radio" id="fortaleza_c_1" name="fortaleza_1" value="c"></td>
+                        <td><label for="fortaleza_d_1">Adaptable</label><input type="radio" id="fortaleza_d_1" name="fortaleza_1" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_2">Juguetón</label><input type="radio" id="fortaleza_a_2" name="fortaleza_2" value="a"></td>
+                        <td><label for="fortaleza_b_2">Persuasivo</label><input type="radio" id="fortaleza_b_2" name="fortaleza_2" value="b"></td>
+                        <td><label for="fortaleza_c_2">Persistente</label><input type="radio" id="fortaleza_c_2" name="fortaleza_2" value="c"></td>
+                        <td><label for="fortaleza_d_2">Plácido</label><input type="radio" id="fortaleza_d_2" name="fortaleza_2" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_3">Sociable</label><input type="radio" id="fortaleza_a_3" name="fortaleza_3" value="a"></td>
+                        <td><label for="fortaleza_b_3">Decidido</label><input type="radio" id="fortaleza_b_3" name="fortaleza_3" value="b"></td>
+                        <td><label for="fortaleza_c_3">Abnegado</label><input type="radio" id="fortaleza_c_3" name="fortaleza_3" value="c"></td>
+                        <td><label for="fortaleza_d_3">Sumiso</label><input type="radio" id="fortaleza_d_3" name="fortaleza_3" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_4">Convincente</label><input type="radio" id="fortaleza_a_4" name="fortaleza_4" value="a"></td>
+                        <td><label for="fortaleza_b_4">Competitivo</label><input type="radio" id="fortaleza_b_4" name="fortaleza_4" value="b"></td>
+                        <td><label for="fortaleza_c_4">Considerado</label><input type="radio" id="fortaleza_c_4" name="fortaleza_4" value="c"></td>
+                        <td><label for="fortaleza_d_4">Controlado</label><input type="radio" id="fortaleza_d_4" name="fortaleza_4" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_5">Entusiasta </label><input type="radio" id="fortaleza_a_5" name="fortaleza_5" value="a"></td>
+                        <td><label for="fortaleza_b_5">Inventivo</label> <input type="radio" id="fortaleza_b_5" name="fortaleza_5" value="b"></td>
+                        <td><label for="fortaleza_c_5">Respetuoso </label><input type="radio" id="fortaleza_c_5" name="fortaleza_5" value="c"></td>
+                        <td><label for="fortaleza_d_5">Reservado </label><input type="radio" id="fortaleza_d_5" name="fortaleza_5" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_6">Enérgico </label><input type="radio" id="fortaleza_a_6"
+                                                                               name="fortaleza_6" value="a"></td>
+                        <td><label for="fortaleza_b_6">Autosuficiente </label><input type="radio" id="fortaleza_b_6"
+                                                                                     name="fortaleza_6" value="b"></td>
+                        <td><label for="fortaleza_c_6">Sensible </label><input type="radio" id="fortaleza_c_6"
+                                                                               name="fortaleza_6" value="c"></td>
+                        <td><label for="fortaleza_d_6">Contento </label><input type="radio" id="fortaleza_d_6"
+                                                                               name="fortaleza_6" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_7">Activista </label><input type="radio" id="fortaleza_a_7"
+                                                                                name="fortaleza_7" value="a"></td>
+                        <td><label for="fortaleza_b_7">Positivo </label><input type="radio" id="fortaleza_b_7"
+                                                                               name="fortaleza_7" value="b"></td>
+                        <td><label for="fortaleza_c_7">Planificador</label> <input type="radio" id="fortaleza_c_7"
+                                                                                   name="fortaleza_7" value="c"></td>
+                        <td><label for="fortaleza_d_7">Paciente </label><input type="radio" id="fortaleza_d_7"
+                                                                               name="fortaleza_7" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_8">Espontáneo </label><input type="radio" id="fortaleza_a_8"
+                                                                                 name="fortaleza_8" value="a"></td>
+                        <td><label for="fortaleza_b_8">Seguro</label> <input type="radio" id="fortaleza_b_8"
+                                                                             name="fortaleza_8" value="b"></td>
+                        <td><label for="fortaleza_c_8">Puntual</label> <input type="radio" id="fortaleza_c_8"
+                                                                              name="fortaleza_8" value="c"></td>
+                        <td><label for="fortaleza_d_8">Tímido</label> <input type="radio" id="fortaleza_d_8"
+                                                                             name="fortaleza_8" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_9">Optimista</label><input type="radio" id="fortaleza_a_9"
+                                                                               name="fortaleza_9" value="a"></td>
+                        <td><label for="fortaleza_b_9">Abierto</label><input type="radio" id="fortaleza_b_9"
+                                                                             name="fortaleza_9" value="b"></td>
+                        <td><label for="fortaleza_c_9">Ordenado</label><input type="radio" id="fortaleza_c_9"
+                                                                              name="fortaleza_9" value="c"></td>
+                        <td><label for="fortaleza_d_9">Atento</label><input type="radio" id="fortaleza_d_9"
+                                                                            name="fortaleza_9" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_10">Humorístico</label><input type="radio" id="fortaleza_a_10"
+                                                                                  name="fortaleza_10" value="a"></td>
+                        <td><label for="fortaleza_b_10">Dominante</label><input type="radio" id="fortaleza_b_10"
+                                                                                name="fortaleza_10" value="b"></td>
+                        <td><label for="fortaleza_c_10">Fiel</label><input type="radio" id="fortaleza_c_10"
+                                                                           name="fortaleza_10" value="c"></td>
+                        <td><label for="fortaleza_d_10">Amigable</label><input type="radio" id="fortaleza_d_10"
+                                                                               name="fortaleza_10" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_11">Encantador</label><input type="radio" id="fortaleza_a_11"
+                                                                                 name="fortaleza_11" value="a"></td>
+                        <td><label for="fortaleza_b_11">Osado</label><input type="radio" id="fortaleza_b_11"
+                                                                            name="fortaleza_11" value="b"></td>
+                        <td><label for="fortaleza_c_11">Detallista</label><input type="radio" id="fortaleza_c_11"
+                                                                                 name="fortaleza_11" value="c"></td>
+                        <td><label for="fortaleza_d_11">Diplomático</label><input type="radio" id="fortaleza_d_11"
+                                                                                  name="fortaleza_11" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_12">Alegre</label><input type="radio" id="fortaleza_a_12"
+                                                                             name="fortaleza_12" value="a"></td>
+                        <td><label for="fortaleza_b_12">Confiado</label><input type="radio" id="fortaleza_b_12"
+                                                                               name="fortaleza_12" value="b"></td>
+                        <td><label for="fortaleza_c_12">Culto</label><input type="radio" id="fortaleza_c_12"
+                                                                            name="fortaleza_12" value="c"></td>
+                        <td><label for="fortaleza_d_12">Constante</label><input type="radio" id="fortaleza_d_12"
+                                                                                name="fortaleza_12" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_13">Inspirador</label><input type="radio" id="fortaleza_a_13"
+                                                                                 name="fortaleza_13" value="a"></td>
+                        <td><label for="fortaleza_b_13">Independiente</label><input type="radio" id="fortaleza_b_13"
+                                                                                    name="fortaleza_13" value="b"></td>
+                        <td><label for="fortaleza_c_13">Idealista</label><input type="radio" id="fortaleza_c_13"
+                                                                                name="fortaleza_13" value="c"></td>
+                        <td><label for="fortaleza_d_13">Inofensivo</label><input type="radio" id="fortaleza_d_13"
+                                                                                 name="fortaleza_13" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_14">Cálido</label><input type="radio" id="fortaleza_a_14"
+                                                                             name="fortaleza_14" value="a"></td>
+                        <td><label for="fortaleza_b_14">Decisivo</label><input type="radio" id="fortaleza_b_14"
+                                                                               name="fortaleza_14" value="b"></td>
+                        <td><label for="fortaleza_c_14">Introspectivo</label><input type="radio" id="fortaleza_c_14"
+                                                                                    name="fortaleza_14" value="c"></td>
+                        <td><label for="fortaleza_d_14">Humor seco</label><input type="radio" id="fortaleza_d_14"
+                                                                                 name="fortaleza_14" value="d"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="fortaleza_a_15">Cordial</label><input type="radio" id="fortaleza_a_15" name="fortaleza_15" value="a"></td>
+                        <td><label for="fortaleza_b_15">Instigador</label><input type="radio" id="fortaleza_b_15" name="fortaleza_15" value="b"></td>
+                        <td><label for="fortaleza_c_15">Músico</label><input type="radio" id="fortaleza_c_15" name="fortaleza_15" value="c"></td>
+                        <td><label for="fortaleza_d_15">Conciliador</label><input type="radio" id="fortaleza_d_15" name="fortaleza_15" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_16">Conversador</label><input type="radio" id="fortaleza_a_16" name="fortaleza_16" value="a"></td>
+                        <td><label for="fortaleza_b_16">Tenaz</label><input type="radio" id="fortaleza_b_16" name="fortaleza_6" value="b"></td>
+                        <td><label for="fortaleza_c_16">Considerado</label><input type="radio" id="fortaleza_c_16" name="fortaleza_16" value="c"></td>
+                        <td><label for="fortaleza_d_16">Tolerante</label><input type="radio" id="fortaleza_d_16" name="fortaleza_16" value="d">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_17">Vivaz</label><input type="radio" id="fortaleza_a_17" name="fortaleza_17" value="a"></td>
+                        <td><label for="fortaleza_b_17">Líder</label><input type="radio" id="fortaleza_b_17"
+                                                                            name="fortaleza_17" value="b"></td>
+                        <td><label for="fortaleza_c_17">Leal</label><input type="radio" id="fortaleza_c_17"
+                                                                           name="fortaleza_17" value="c"></td>
+                        <td><label for="fortaleza_d_17">Escucha</label><input type="radio" id="fortaleza_d_17"
+                                                                              name="fortaleza_17" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_18">Listo</label><input type="radio" id="fortaleza_a_18"
+                                                                            name="fortaleza_18" value="a"></td>
+                        <td><label for="fortaleza_b_18">Jefe</label><input type="radio" id="fortaleza_b_18"
+                                                                           name="fortaleza_18" value="b"></td>
+                        <td><label for="fortaleza_c_18">Organizado</label><input type="radio" id="fortaleza_c_18"
+                                                                                 name="fortaleza_18" value="c"></td>
+                        <td><label for="fortaleza_d_18">Contento</label><input type="radio" id="fortaleza_d_18"
+                                                                               name="fortaleza_18" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_19">Popular</label><input type="radio" id="fortaleza_a_19"
+                                                                              name="fortaleza_19" value="a"></td>
+                        <td><label for="fortaleza_b_19">Productivo</label><input type="radio" id="fortaleza_b_19"
+                                                                                 name="fortaleza_19" value="b"></td>
+                        <td><label for="fortaleza_c_19">Perfeccionista</label><input type="radio" id="fortaleza_c_19"
+                                                                                     name="fortaleza_19" value="c"></td>
+                        <td><label for="fortaleza_d_19">Permisivo</label><input type="radio" id="fortaleza_d_19"
+                                                                                name="fortaleza_19" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fortaleza_a_20">Jovial</label><input type="radio" id="fortaleza_a_20"
+                                                                             name="fortaleza_20" value="a"></td>
+                        <td><label for="fortaleza_b_20">Atrevido</label><input type="radio" id="fortaleza_b_20"
+                                                                               name="fortaleza_20" value="b"></td>
+                        <td><label for="fortaleza_c_20">Se porta bien</label><input type="radio" id="fortaleza_c_20"
+                                                                                    name="fortaleza_20" value="c"></td>
+                        <td><label for="fortaleza_d_20">Equilibrado</label><input type="radio" id="fortaleza_d_20"
+                                                                                  name="fortaleza_20" value="d"></td>
+                    </tr>
+                    </td>
+                </table>
+                <h2>DEBILIDADES (Weakness)</h2>
+                <table>
+                    <tr>
+                        <th>Columna A</th>
+                        <th>Columna B</th>
+                        <th>Columna C</th>
+                        <th>Columna D</th>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_1">Animado</label><input type="radio" id="debilidad_a_1" name="debilidad_1" value="a"></td>
+                        <td><label for="debilidad_b_1">Aventurero</label><input type="radio" id="debilidad_b_1" name="debilidad_1" value="b"></td>
+                        <td><label for="debilidad_c_1">Analítico</label><input type="radio" id="debilidad_c_1" name="debilidad_1" value="c"></td>
+                        <td><label for="debilidad_d_1">Adaptable</label><input type="radio" id="debilidad_d_1" name="debilidad_1" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_2">Juguetón</label><input type="radio" id="debilidad_a_2" name="debilidad_2" value="a"></td>
+                        <td><label for="debilidad_b_2">Persuasivo</label><input type="radio" id="debilidad_b_2" name="debilidad_2" value="b"></td>
+                        <td><label for="debilidad_c_2">Persistente</label><input type="radio" id="debilidad_c_2" name="debilidad_2" value="c"></td>
+                        <td><label for="debilidad_d_2">Plácido</label><input type="radio" id="debilidad_d_2" name="debilidad_2" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_3">Sociable</label><input type="radio" id="debilidad_a_3" name="debilidad_3" value="a"></td>
+                        <td><label for="debilidad_b_3">Decidido</label><input type="radio" id="debilidad_b_3" name="debilidad_3" value="b"></td>
+                        <td><label for="debilidad_c_3">Abnegado</label><input type="radio" id="debilidad_c_3" name="debilidad_3" value="c"></td>
+                        <td><label for="debilidad_d_3">Sumiso</label><input type="radio" id="debilidad_d_3" name="debilidad_3" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_4">Convincente</label><input type="radio" id="debilidad_a_4" name="debilidad_4" value="a"></td>
+                        <td><label for="debilidad_b_4">Competitivo</label><input type="radio" id="debilidad_b_4" name="debilidad_4" value="b"></td>
+                        <td><label for="debilidad_c_4">Considerado</label><input type="radio" id="debilidad_c_4" name="debilidad_4" value="c"></td>
+                        <td><label for="debilidad_d_4">Controlado</label><input type="radio" id="debilidad_d_4"  name="debilidad_4" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_5">Entusiasta</label><input type="radio" id="debilidad_a_5" name="debilidad_5" value="a"></td>
+                        <td><label for="debilidad_b_5">Inventivo</label><input type="radio" id="debilidad_b_5" name="debilidad_5" value="b"></td>
+                        <td><label for="debilidad_c_5">Respetuoso</label><input type="radio" id="debilidad_c_5" name="debilidad_5" value="c"></td>
+                        <td><label for="debilidad_d_5">Reservado</label><input type="radio" id="debilidad_d_5" name="debilidad_5" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_6">Enérgico</label><input type="radio" id="debilidad_a_6" name="debilidad_6" value="a"></td>
+                        <td><label for="debilidad_b_6">Autosuficiente</label><input type="radio" id="debilidad_b_6" name="debilidad_6" value="b"></td>
+                        <td><label for="debilidad_c_6">Sensible</label><input type="radio" id="debilidad_c_6" name="debilidad_6" value="c"></td>
+                        <td><label for="debilidad_d_6">Contento</label><input type="radio" id="debilidad_d_6" name="debilidad_6" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_7">Activista</label><input type="radio" id="debilidad_a_7" name="debilidad_7" value="a"></td>
+                        <td><label for="debilidad_b_7">Positivo</label><input type="radio" id="debilidad_b_7" name="debilidad_7" value="b"></td>
+                        <td><label for="debilidad_c_7">Planificador</label><input type="radio" id="debilidad_c_7" name="debilidad_7" value="c"></td>
+                        <td><label for="debilidad_d_7">Paciente</label><input type="radio" id="debilidad_d_7" name="debilidad_7" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_8">Espontáneo</label><input type="radio" id="debilidad_a_8" name="debilidad_8" value="a"></td>
+                        <td><label for="debilidad_b_8">Seguro</label><input type="radio" id="debilidad_b_8" name="debilidad_8" value="b"></td>
+                        <td><label for="debilidad_c_8">Puntual</label><input type="radio" id="debilidad_c_8" name="debilidad_8" value="c"></td>
+                        <td><label for="debilidad_d_8">Tímido</label><input type="radio" id="debilidad_d_8" name="debilidad_8" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_9">Optimista</label><input type="radio" id="debilidad_a_9" name="debilidad_9" value="a"></td>
+                        <td><label for="debilidad_b_9">Abierto</label><input type="radio" id="debilidad_b_9" name="debilidad_9" value="b"></td>
+                        <td><label for="debilidad_c_9">Ordenado</label><input type="radio" id="debilidad_c_9" name="debilidad_9" value="c"></td>
+                        <td><label for="debilidad_d_9">Atento</label><input type="radio" id="debilidad_d_9" name="debilidad_9" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_10">Humorístico</label><input type="radio" id="debilidad_a_10" name="debilidad_10" value="a"></td>
+                        <td><label for="debilidad_b_10">Dominante</label><input type="radio" id="debilidad_b_10" name="debilidad_10" value="b"></td>
+                        <td><label for="debilidad_c_10">Fiel</label><input type="radio" id="debilidad_c_10" name="debilidad_10" value="c"></td>
+                        <td><label for="debilidad_d_10">Amigable</label><input type="radio" id="debilidad_d_10" name="debilidad_10" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_11">Encantador</label><input type="radio" id="debilidad_a_11" name="debilidad_11" value="a"></td>
+                        <td><label for="debilidad_b_11">Osado</label><input type="radio" id="debilidad_b_11" name="debilidad_11" value="b"></td>
+                        <td><label for="debilidad_c_11">Detallista</label><input type="radio" id="debilidad_c_11" name="debilidad_11" value="c"></td>
+                        <td><label for="debilidad_d_11">Diplomático</label><input type="radio" id="debilidad_d_11" name="debilidad_11" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_12">Alegre</label><input type="radio" id="debilidad_a_12" name="debilidad_12" value="a"></td>
+                        <td><label for="debilidad_b_12">Confiado</label><input type="radio" id="debilidad_b_12" name="debilidad_12" value="b"></td>
+                        <td><label for="debilidad_c_12">Culto</label><input type="radio" id="debilidad_c_12" name="debilidad_12" value="c"></td>
+                        <td><label for="debilidad_d_12">Constante</label><input type="radio" id="debilidad_d_12" name="debilidad_12" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_13">Inspirador</label><input type="radio" id="debilidad_a_13" name="debilidad_13" value="a"></td>
+                        <td><label for="debilidad_b_13">Independiente</label><input type="radio" id="debilidad_b_13" name="debilidad_13" value="b"></td>
+                        <td><label for="debilidad_c_13">Idealista</label><input type="radio" id="debilidad_c_13" name="debilidad_13" value="c"></td>
+                        <td><label for="debilidad_d_13">Inofensivo</label><input type="radio" id="debilidad_d_13" name="debilidad_13" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_14">Cálido</label><input type="radio" id="debilidad_a_14" name="debilidad_14" value="a"></td>
+                        <td><label for="debilidad_b_14">Decisivo</label><input type="radio" id="debilidad_b_14" name="debilidad_14" value="b"></td>
+                        <td><label for="debilidad_c_14">Introspectivo</label><input type="radio" id="debilidad_c_14" name="debilidad_14" value="c"></td>
+                        <td><label for="debilidad_d_14">Humor seco</label><input type="radio" id="debilidad_d_14" name="debilidad_14" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_15">Cordial</label><input type="radio" id="debilidad_a_15" name="debilidad_15" value="a"></td>
+                        <td><label for="debilidad_b_15">Instigador</label><input type="radio" id="debilidad_b_15" name="debilidad_15" value="b"></td>
+                        <td><label for="debilidad_c_15">Músico</label><input type="radio" id="debilidad_c_15" name="debilidad_15" value="c"></td>
+                        <td><label for="debilidad_d_15">Conciliador</label><input type="radio" id="debilidad_d_15" name="debilidad_15" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_16">Conversador</label><input type="radio" id="debilidad_a_16" name="debilidad_16" value="a"></td>
+                        <td><label for="debilidad_b_16">Tenaz</label><input type="radio" id="debilidad_b_16" name="debilidad_16" value="b"></td>
+                        <td><label for="debilidad_c_16">Considerado</label><input type="radio" id="debilidad_c_16" name="debilidad_16" value="c"></td>
+                        <td><label for="debilidad_d_16">Tolerante</label><input type="radio" id="debilidad_d_16" name="debilidad_16" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_17">Vivaz</label><input type="radio" id="debilidad_a_17" name="debilidad_17" value="a"></td>
+                        <td><label for="debilidad_b_17">Líder</label><input type="radio" id="debilidad_b_17" name="debilidad_17" value="b"></td>
+                        <td><label for="debilidad_c_17">Leal</label><input type="radio" id="debilidad_c_17" name="debilidad_17" value="c"></td>
+                        <td><label for="debilidad_d_17">Escucha</label><input type="radio" id="debilidad_d_17" name="debilidad_17" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_18">Listo</label><input type="radio" id="debilidad_a_18" name="debilidad_18" value="a"></td>
+                        <td><label for="debilidad_b_18">Jefe</label><input type="radio" id="debilidad_b_18" name="debilidad_18" value="b"></td>
+                        <td><label for="debilidad_c_18">Organizado</label><input type="radio" id="debilidad_c_18" name="debilidad_18" value="c"></td>
+                        <td><label for="debilidad_d_18">Contento</label><input type="radio" id="debilidad_d_18" name="debilidad_18" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_19">Popular</label><input type="radio" id="debilidad_a_19" name="debilidad_19" value="a"></td>
+                        <td><label for="debilidad_b_19">Productivo</label><input type="radio" id="debilidad_b_19" name="debilidad_19" value="b"></td>
+                        <td><label for="debilidad_c_19">Perfeccionista</label><input type="radio" id="debilidad_c_19" name="debilidad_19" value="c"></td>
+                        <td><label for="debilidad_d_19">Permisivo</label><input type="radio" id="debilidad_d_19" name="debilidad_19" value="d"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="debilidad_a_20">Jovial</label><input type="radio" id="debilidad_a_20" name="debilidad_20" value="a"></td>
+                        <td><label for="debilidad_b_20">Atrevido</label><input type="radio" id="debilidad_b_20" name="debilidad_20" value="b"></td>
+                        <td><label for="debilidad_c_20">Se porta bien</label><input type="radio" id="debilidad_c_20" name="debilidad_20" value="c"></td>
+                        <td><label for="debilidad_d_20">Equilibrado</label><input type="radio" id="debilidad_d_20" name="debilidad_20" value="d"></td>
+                    </tr>
+                </table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

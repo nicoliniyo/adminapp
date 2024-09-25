@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 21:01-0400\n"
+"POT-Creation-Date: 2024-08-15 15:23-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,19 +29,19 @@ msgstr "Spanish"
 msgid "Beta"
 msgstr "Beta"
 
-#: aiopen/templates/list_tasks.html:29
+#: aiopen/templates/list_tasks.html:30
 msgid "Send"
 msgstr "Send"
 
-#: aiopen/templates/list_tasks.html:46
+#: aiopen/templates/list_tasks.html:47
 msgid "Delete"
 msgstr "Delete"
 
-#: aiopen/templates/list_tasks.html:54 aiopen/templates/list_tasks_user.html:52
+#: aiopen/templates/list_tasks.html:55 aiopen/templates/list_tasks_user.html:52
 msgid "No answers yet"
 msgstr "No answers yet"
 
-#: aiopen/templates/list_tasks.html:55 aiopen/templates/list_tasks_user.html:53
+#: aiopen/templates/list_tasks.html:56 aiopen/templates/list_tasks_user.html:53
 msgid "Waiting for you to make a question"
 msgstr "Waiting for you to make a question"
 
@@ -71,13 +71,13 @@ msgstr "Licences"
 
 #: bootstrap/templates/baseWithHeader.html:63
 msgid "just apps!"
-msgstr "Just Apps!"
+msgstr "Online Test"
 
-#: bootstrap/templates/baseWithHeader.html:67
+#: bootstrap/templates/baseWithHeader.html:73
 msgid "Register"
 msgstr "Register"
 
-#: bootstrap/templates/baseWithHeader.html:69
+#: bootstrap/templates/baseWithHeader.html:75
 #, fuzzy
 #| msgid "signin"
 msgid "Signin "
@@ -85,20 +85,11 @@ msgstr "Signin"
 
 #: bootstrap/templates/index.html:7
 msgid "creating apps for the future title"
-msgstr "Creating Apps for the Future"
+msgstr "What does the Temperature Assessment Test do?"
 
 #: bootstrap/templates/index.html:10
 msgid "creating app for the future text"
-msgstr ""
-"We are dedicated to creating open-source applications that are accessible "
-"and beneficial to everyone. Our open-source applications are transparent, "
-"community-driven, and free to use, modify, and distribute. We believe in the "
-"power of open-source software to promote collaboration, innovation, and the "
-"creation of tools that meet the needs of diverse users. Our applications are "
-"designed for general use and can be used by individuals and organizations "
-"seeking practical solutions for everyday tasks. Join us in embracing the "
-"open-source philosophy and discover the endless possibilities of "
-"collaborative software development."
+msgstr "The temperature assessment is an operation based on a list of values obtained from the end user or evaluator which, after a simple calculation, obtains a result, which determines as a final result 4 values that can be: sanguine, choleric, melancholic and phlegmatic."
 
 #: bootstrap/templates/nav.html:16
 msgid "home"

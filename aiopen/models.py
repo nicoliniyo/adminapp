@@ -8,7 +8,7 @@ from .constants import default_engine
 
 # Create your models here.
 class Task(models.Model):
-    input_value = models.CharField(max_length=100)
+    input_value = models.TextField()
 
     # Timestamp field with default value of current time
     created_at = models.DateTimeField(default=timezone.now)
