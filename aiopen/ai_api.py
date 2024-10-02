@@ -21,6 +21,7 @@ api_model = os.getenv('GROQ_API_MODEL')
 def send_request(user_input):
     payload = json.dumps({
         "model": api_model,
+        "temperature":"0",
         "messages": [
             {
                 "role": "user",
